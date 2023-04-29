@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AllTemplateAdminComponent } from './backOffice/all-template-admin/all-template-admin.component';
@@ -12,6 +11,19 @@ import { AllTemplateUserComponent } from './frontOffice/all-template-user/all-te
 import { BodyUserComponent } from './frontOffice/body-user/body-user.component';
 import { FooterUserComponent } from './frontOffice/footer-user/footer-user.component';
 import { HeaderUserComponent } from './frontOffice/header-user/header-user.component';
+import { FullCalendarModule } from '@fullcalendar/angular';
+import interactionPlugin from '@fullcalendar/interaction';
+import daygridPlugin from '@fullcalendar/daygrid';
+import { Calendar } from '@fullcalendar/core';
+import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
+import {HttpClientModule} from "@angular/common/http";
+
+import { ReactiveFormsModule } from '@angular/forms';
+import { HeadUserRComponent } from './frontOffice/head-user-r/head-user-r.component';
+
+ 
+ 
 
 @NgModule({
   declarations: [
@@ -24,11 +36,20 @@ import { HeaderUserComponent } from './frontOffice/header-user/header-user.compo
     AllTemplateUserComponent,
     BodyUserComponent,
     FooterUserComponent,
-    HeaderUserComponent
+    HeaderUserComponent,
+    HeadUserRComponent,
+    
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule, 
+    FullCalendarModule,
+    NgModule,
+    FormsModule,
+    RouterModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -4,6 +4,13 @@ import { AllTemplateAdminComponent } from './backOffice/all-template-admin/all-t
 import { BodyAdminComponent } from './backOffice/body-admin/body-admin.component';
 import { AllTemplateUserComponent } from './frontOffice/all-template-user/all-template-user.component';
 import { BodyUserComponent } from './frontOffice/body-user/body-user.component';
+import { FooterAdminComponent } from './backOffice/footer-admin/footer-admin.component';
+import { FooterUserComponent } from './frontOffice/footer-user/footer-user.component';
+import { SideAdminComponent } from './backOffice/side-admin/side-admin.component';
+import { HeaderAdminComponent } from './backOffice/header-admin/header-admin.component';
+import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';
+
 
 const routes: Routes = [
   {
@@ -29,7 +36,9 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [CommonModule,
+    BrowserModule,
+    RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
