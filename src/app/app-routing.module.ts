@@ -4,6 +4,7 @@ import { AllTemplateAdminComponent } from './backOffice/all-template-admin/all-t
 import { BodyAdminComponent } from './backOffice/body-admin/body-admin.component';
 import { AllTemplateUserComponent } from './frontOffice/all-template-user/all-template-user.component';
 import { BodyUserComponent } from './frontOffice/body-user/body-user.component';
+import { ClaimComponent } from './frontOffice/claim/claim.component';
 
 const routes: Routes = [
   {
@@ -23,6 +24,9 @@ const routes: Routes = [
       {
         path:'user',
         component:BodyUserComponent
+      },
+      {
+        path: 'Claims',      component:ClaimComponent
       }
     ]
   }

@@ -1,0 +1,41 @@
+
+<div class="row">
+  <div class="col-6" style="margin-left: 40px;margin-top:20px;">
+
+<form #f="ngForm" (ngSubmit)="ajouter()">
+
+  <div class="form-group">
+      <label>Subject </label>
+      <input class="form-control" type="text" name="Subject" #Subject="ngModel" [(ngModel)]="Claim.Subject"  >
+      <div class="alert alert-danger" *ngIf="Subject.invalid && Subject.touched">
+          <div *ngIf="Subject.errors?.['required']">Subject is required</div>
+    </div>
+   </div>
+   <div class="form-group">
+      <label>Date :</label>
+      <input class="form-control" type="date" name="date" #date="ngModel" [(ngModel)]="Claim.Date" >
+      <div class="alert alert-danger" *ngIf="date.invalid && date.touched">
+          <div *ngIf="date.errors?.['required']">date is required</div>
+
+      </div>
+  </div>
+  <div class="form-group">
+      <label>description :</label>
+      <input class="form-control" type="text" name="description" #description="ngModel" [(ngModel)]="Claim.Description" >
+
+          <div *ngIf="description.errors?.['required']">description is required</div>
+
+      </div>
+
+
+
+  <br>
+  <div class="form-group">
+
+      <button class="btn btn-success pull-right" [disabled]="f.invalid"> Save</button>
+  </div>
+
+
+</form >
+
+

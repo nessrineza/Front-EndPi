@@ -12,6 +12,9 @@ import { AllTemplateUserComponent } from './frontOffice/all-template-user/all-te
 import { BodyUserComponent } from './frontOffice/body-user/body-user.component';
 import { FooterUserComponent } from './frontOffice/footer-user/footer-user.component';
 import { HeaderUserComponent } from './frontOffice/header-user/header-user.component';
+import { ClaimComponent } from './frontOffice/claim/claim.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -24,11 +27,14 @@ import { HeaderUserComponent } from './frontOffice/header-user/header-user.compo
     AllTemplateUserComponent,
     BodyUserComponent,
     FooterUserComponent,
-    HeaderUserComponent
+    HeaderUserComponent,
+    ClaimComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
