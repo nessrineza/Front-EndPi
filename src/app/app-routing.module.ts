@@ -4,6 +4,8 @@ import { AllTemplateAdminComponent } from './backOffice/all-template-admin/all-t
 import { BodyAdminComponent } from './backOffice/body-admin/body-admin.component';
 import { AllTemplateUserComponent } from './frontOffice/all-template-user/all-template-user.component';
 import { BodyUserComponent } from './frontOffice/body-user/body-user.component';
+import { AnnouncementComponent } from './backOffice/announcement/announcement.component';
+import { ListAnnoncesComponent } from './backOffice/list-annonces/list-annonces.component';
 
 const routes: Routes = [
   {
@@ -11,8 +13,16 @@ const routes: Routes = [
     component:AllTemplateAdminComponent,
     children:[
       {
-        path:'admin',
+        path:'',
         component:BodyAdminComponent
+      },
+      {
+        path:'annonce',
+        component:AnnouncementComponent
+      },
+      {
+        path:'listannonce',
+        component:ListAnnoncesComponent
       }
     ]
   },

@@ -12,10 +12,15 @@ import { AllTemplateUserComponent } from './frontOffice/all-template-user/all-te
 import { BodyUserComponent } from './frontOffice/body-user/body-user.component';
 import { FooterUserComponent } from './frontOffice/footer-user/footer-user.component';
 import { HeaderUserComponent } from './frontOffice/header-user/header-user.component';
+import { HttpClientModule,  } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AnnouncementComponent } from './backOffice/announcement/announcement.component';
+import { ListAnnoncesComponent } from './backOffice/list-annonces/list-annonces.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    AnnouncementComponent,
     AllTemplateAdminComponent,
     BodyAdminComponent,
     FooterAdminComponent,
@@ -24,11 +29,19 @@ import { HeaderUserComponent } from './frontOffice/header-user/header-user.compo
     AllTemplateUserComponent,
     BodyUserComponent,
     FooterUserComponent,
-    HeaderUserComponent
+    HeaderUserComponent,
+    ListAnnoncesComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+
+    FormsModule ,
+
+
+
   ],
   providers: [],
   bootstrap: [AppComponent]
