@@ -4,6 +4,8 @@ import { AllTemplateAdminComponent } from './backOffice/all-template-admin/all-t
 import { BodyAdminComponent } from './backOffice/body-admin/body-admin.component';
 import { AllTemplateUserComponent } from './frontOffice/all-template-user/all-template-user.component';
 import { BodyUserComponent } from './frontOffice/body-user/body-user.component';
+import { AppointementComponent } from './frontOffice/appointement/appointement.component';
+import { DetailAppointementComponent } from './frontOffice/detail-appointement/detail-appointement.component';
 
 const routes: Routes = [
   {
@@ -22,8 +24,17 @@ const routes: Routes = [
     children:[
       {
         path:'user',
-        component:BodyUserComponent
+        component:BodyUserComponent,
+        
+      },
+      {
+        path: 'appointments',      component:AppointementComponent
+      },
+      {
+        path: 'DetailAppointementComponent', component: DetailAppointementComponent 
+
       }
+      
     ]
   }
 ];
