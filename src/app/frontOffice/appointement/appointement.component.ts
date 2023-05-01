@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Appointement } from '../../models/appointement';
 import { AppointementService } from '../services/appointement.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { NgForm } from '@angular/forms';
 @Component({
   selector: 'app-appointement',
   templateUrl: './appointement.component.html',

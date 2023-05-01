@@ -1,1 +1,31 @@
-<p>payement works!</p>
+
+<div class="row">
+    <div class="col-6" style="margin-left: 40px;margin-top:20px;">
+
+<form #f="ngForm" (ngSubmit)="ajouter()">
+    
+    <div class="form-group">
+        <label>Amount: </label>
+        <input class="form-control" type="number" name="Rising" #Rising="ngModel" [(ngModel)]="payement.rising"  >
+        <div class="alert alert-danger" *ngIf="Rising.invalid && Rising.touched">
+            <div *ngIf="Rising.errors?.['required']">Amount is required</div>
+      </div>
+     </div>
+     <label for="paymentMethod">Payment Method:</label>
+<select id="paymentMethod" name="paymentMethod" [(ngModel)]="payement.type">
+  <option *ngFor="let method of paymentMethods" [value]="method">{{ method }}</option>
+</select>
+
+      
+   
+    <br>
+    <div class="form-group">
+        
+      <button class="btn btn-success pull-right" [disabled]="f.invalid"> Save</button>
+    </div>
+   
+
+</form >
+    
+
+

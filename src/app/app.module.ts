@@ -16,6 +16,9 @@ import {HttpClientModule} from "@angular/common/http";
 import { AppointementComponent } from './frontOffice/appointement/appointement.component';
 import { FormsModule } from '@angular/forms';
 import { DetailAppointementComponent } from './frontOffice/detail-appointement/detail-appointement.component';
+import { PayementComponent } from './frontOffice/payement/payement.component';
+import { DisplayPayementComponent } from './frontOffice/display-payement/display-payement.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +32,10 @@ import { DetailAppointementComponent } from './frontOffice/detail-appointement/d
     FooterUserComponent,
     HeaderUserComponent,
     AppointementComponent,
-    DetailAppointementComponent
+    DetailAppointementComponent,
+    PayementComponent,
+    DisplayPayementComponent
+   
   ],
   imports: [
     BrowserModule,

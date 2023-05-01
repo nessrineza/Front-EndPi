@@ -26,6 +26,6 @@ export class AppointementService {
   }
 
   deleteAppointement(id:any){
-    return this.http.delete(this.apiUrl+"/delete"+id);
+    return this.http.delete(this.apiUrl+"/delete/"+id);
   }
 }

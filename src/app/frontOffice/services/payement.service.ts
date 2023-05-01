@@ -1,9 +1,38 @@
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Payement } from 'src/app/models/Payement';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PayementService {
+  apiUrl : string = "http://localhost:8090/SpringMVC/Payement"
+  
+  constructor( private http : HttpClient) { }
+  public fetchAll(): Observable<Payement[]> {
+    return this.http.get<Payement[]>(this.apiUrl);
+  }
 
-  constructor() { }
+  /*public add(payement: Payement): Observable<Payement> {
+
+    return this.http.post<Payement>(this.apiUrl + "/Add",Payement);
+  }*/
+  add(payement: Payement): Observable<Payement> {
+    const headers = new HttpHeaders().set('Content-Type', 'application/json');
+    const options = { headers: headers };
+    return this.http.post<Payement>(this.apiUrl + '/Add', JSON.stringify(payement), options);
+  }
+  
+  public getAllPayement() : Observable<Payement[]>
+  {
+    return this.http.get<Payement[]>(this.apiUrl + "/all");
+  }
+  updatePayement(id:any,payement:Payement){
+    return this.http.put(this.apiUrl+"/update"+id,Payement);
+  }
+
+  deletePayement(id:any){
+    return this.http.delete(this.apiUrl+"/delete/"+id);
+  }
 }

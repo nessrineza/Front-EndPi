@@ -3,7 +3,7 @@ import { Type } from "./type";
 
 export class Payement{
     id! : number;
-    Rising! : number;
+    rising! : number;
     type ?: Type;
    
 }

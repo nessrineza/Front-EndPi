@@ -6,6 +6,8 @@ import { AllTemplateUserComponent } from './frontOffice/all-template-user/all-te
 import { BodyUserComponent } from './frontOffice/body-user/body-user.component';
 import { AppointementComponent } from './frontOffice/appointement/appointement.component';
 import { DetailAppointementComponent } from './frontOffice/detail-appointement/detail-appointement.component';
+import { PayementComponent } from './frontOffice/payement/payement.component';
+import { DisplayPayementComponent } from './frontOffice/display-payement/display-payement.component';
 
 const routes: Routes = [
   {
@@ -32,6 +34,14 @@ const routes: Routes = [
       },
       {
         path: 'DetailAppointementComponent', component: DetailAppointementComponent 
+
+      },
+      {
+        path: 'payement', component: PayementComponent
+
+      },
+      {
+        path: 'Displaypayement', component: DisplayPayementComponent
 
       }
       
