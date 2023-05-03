@@ -16,6 +16,13 @@ import { HttpClientModule,  } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AnnouncementComponent } from './backOffice/announcement/announcement.component';
 import { ListAnnoncesComponent } from './backOffice/list-annonces/list-annonces.component';
+import { SponsoringComponent } from './backOffice/sponsoring/sponsoring.component';
+import { ListSponsoringsComponent } from './backOffice/list-sponsorings/list-sponsorings.component';
+import { UpdateannonceComponent } from './backOffice/updateannonce/updateannonce.component';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { FilterPipeModule } from 'ngx-filter-pipe';
+import { AddAnnonceComponent } from './backOffice/add-annonce/add-annonce.component';
+import { AnnonceAddComponent } from './backOffice/annonce-add/annonce-add.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +37,13 @@ import { ListAnnoncesComponent } from './backOffice/list-annonces/list-annonces.
     BodyUserComponent,
     FooterUserComponent,
     HeaderUserComponent,
-    ListAnnoncesComponent
+    ListAnnoncesComponent,
+    SponsoringComponent,
+    ListSponsoringsComponent,
+    UpdateannonceComponent,
+    AddAnnonceComponent,
+    AnnonceAddComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -39,6 +52,8 @@ import { ListAnnoncesComponent } from './backOffice/list-annonces/list-annonces.
     ReactiveFormsModule,
 
     FormsModule ,
+    NgxPaginationModule,
+    FilterPipeModule,
 
 
 

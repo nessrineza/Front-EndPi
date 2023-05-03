@@ -3,6 +3,6 @@ export class Sponsoring {
     type!: String;
     description!: String;
     priceS!: Number;
-    quantite!: boolean;
+    quantite!: string;
     picture!: String;
 }

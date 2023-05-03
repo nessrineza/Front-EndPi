@@ -18,47 +18,30 @@
         >
           Add Annonce
         </button>
+
         <div class="card-body">
-          <div class="table-responsive">
-            <table class="table">
-              <thead class="text-primary">
-                <th>location</th>
-                <th>Description</th>
-                <th>PriceA</th>
-                <th>USID</th>
-
-                <th>Delete</th>
-              </thead>
-              <tbody>
-                <tr *ngFor="let list of listAnnonce">
-                  <td>
-                    {{ list.location }}
-                  </td>
-                  <td>
-                    {{ list.description }}
-                  </td>
-                  <td>
-                    {{ list.priceA }}
-                  </td>
-                  <td>
-                    {{ list.usId }}
-                  </td>
-
-                  <td>
-                    <button
-                      type="button"
-                      (click)="onDelete(list)"
-                      class="btn btn-outline-danger"
-                    >
-                      Delete
-                    </button>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+          <input type="text" [(ngModel)]="searchText" placeholder="Search by location" class="form-control">
+<div class="table-responsive">
+  <table class="table">
+    <thead class="text-primary">
+      <th>location</th>
+      <th>Description</th>
+      <th>PriceA</th>
+      <th>USID</th>
+      <th>Delete</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let list of listAnnonce | filterBy: searchText | paginate: { itemsPerPage: 10, currentPage: currentPage }">
+        <td>{{ list.location }}</td>
+        <td>{{ list.description }}</td>
+        <td>{{ list.priceA }}</td>
+        <td>{{ list.usId }}</td>
+        <td>
+          <button type="button" (click)="Delete(list.id)" class="btn btn-outline-danger">Delete</button>
+          <button type="button" routerLink="/admin/updateAnnonce/{{ list.id }}" class="btn btn-outline-danger">Update</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </div>
+<pagination-controls (pageChange)="currentPage = $event"></pagination-controls>

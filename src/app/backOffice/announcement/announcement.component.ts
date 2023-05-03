@@ -33,9 +33,9 @@ export class AnnouncementComponent implements OnInit {
 
   ajouter(){
     //this.productService.addProduct(this.product);
-    this.annonceService.addAnnouncement(this.annonce).subscribe({
-      next : () => this.router.navigateByUrl('/announcements'),
-      error : (error) => console.log(error)
+    this.annonceService.addAnnouncement(this.annonce).subscribe((data)=>{
+      console.log(data)
+      this.router.navigate(['/admin/listannonce']);
     });
 
 

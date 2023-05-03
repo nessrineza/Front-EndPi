@@ -4,16 +4,16 @@ import {  typeA } from "./type-a";
 
 export class Announcement{
 id! : number;
-location! : String;
-description! : String;
-priceA! : Number;
-priceTotalSpon! : Number;
-priceTotal! : Number;
+location! : string;
+description! : string;
+priceA! : number;
+priceTotalSpon! : number;
+priceTotal! : number;
 Verified! : boolean;
-usId! : Number;
-priceTotalDiscount! :Number;
-discount! : Number;
-picture! : String;
+usId! : number;
+priceTotalDiscount! :number;
+discount! : number;
+picture! : string;
 typeA! : typeA;
 category! : category;
 
