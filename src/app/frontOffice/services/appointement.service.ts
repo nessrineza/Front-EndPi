@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient ,HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Appointement } from '../../models/appointement';
@@ -27,5 +27,11 @@ export class AppointementService {
 
   deleteAppointement(id:any){
     return this.http.delete(this.apiUrl+"/delete/"+id);
+  }
+ /* getAppponitementId(id:any): Observable<Appointement> {
+    return this.http.get<Appointement>(this.apiUrl+"/get/"+id);
+  }*/
+  public getAppponitementId(id: any): Observable<HttpResponse<any>> {
+    return this.http.get(`${this.apiUrl}/get/${id}`,{observe : 'response'});
   }
 }

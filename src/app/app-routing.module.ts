@@ -8,6 +8,7 @@ import { AppointementComponent } from './frontOffice/appointement/appointement.c
 import { DetailAppointementComponent } from './frontOffice/detail-appointement/detail-appointement.component';
 import { PayementComponent } from './frontOffice/payement/payement.component';
 import { DisplayPayementComponent } from './frontOffice/display-payement/display-payement.component';
+import { DetailAppoComponent } from './frontOffice/detail-appo/detail-appo.component';
 
 const routes: Routes = [
   {
@@ -30,12 +31,9 @@ const routes: Routes = [
         
       },
       {
-        path: 'appointments',      component:AppointementComponent
+        path: 'appointments',component:AppointementComponent
       },
-      {
-        path: 'DetailAppointementComponent', component: DetailAppointementComponent 
-
-      },
+     
       {
         path: 'payement', component: PayementComponent
 
@@ -43,7 +41,14 @@ const routes: Routes = [
       {
         path: 'Displaypayement', component: DisplayPayementComponent
 
-      }
+      },    
+       {
+        path: 'DetailAppointementComponent', component: AllTemplateUserComponent ,children:[
+          {path:'' , component:DetailAppointementComponent},
+          {path:'detailappo/:id', component:DetailAppoComponent}
+        ]
+
+      },
       
     ]
   }

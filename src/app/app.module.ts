@@ -18,6 +18,7 @@ import { FormsModule } from '@angular/forms';
 import { DetailAppointementComponent } from './frontOffice/detail-appointement/detail-appointement.component';
 import { PayementComponent } from './frontOffice/payement/payement.component';
 import { DisplayPayementComponent } from './frontOffice/display-payement/display-payement.component';
+import { DetailAppoComponent } from './frontOffice/detail-appo/detail-appo.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { DisplayPayementComponent } from './frontOffice/display-payement/display
     AppointementComponent,
     DetailAppointementComponent,
     PayementComponent,
-    DisplayPayementComponent
+    DisplayPayementComponent,
+    DetailAppoComponent
    
   ],
   imports: [

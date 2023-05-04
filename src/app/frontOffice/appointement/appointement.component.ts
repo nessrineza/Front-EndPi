@@ -29,7 +29,7 @@ export class AppointementComponent implements OnInit{
     this.appointementService.add(this.appointement).subscribe({
       next: (newAppointment: Appointement) => {
         // Redirect to appointment detail component with the new appointment ID
-        this.router.navigate(['DetailAppointementComponent']);
+        this.router.navigate(['/DetailAppointementComponent']);
       },
       error: (error) => console.log(error)
     });

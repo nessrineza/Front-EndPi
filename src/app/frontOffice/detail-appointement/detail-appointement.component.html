@@ -15,6 +15,7 @@
         <td>{{ appointment.appointmentStartTime }}</td>
         <td>{{ appointment.appointmentEndTime }}</td>
        <td><button class="btn btn-danger" (click)="delete(appointment.id)">Delete</button></td>
+      <td> <button [routerLink]="['detailappo/',appointment.id]">Details</button></td>
       </tr>
     </tbody>
   </table>

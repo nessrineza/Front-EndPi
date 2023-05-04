@@ -14,7 +14,11 @@ export class DetailAppointementComponent implements OnInit {
   constructor(private appointementService: AppointementService,
     private router : Router){}
   ngOnInit(): void {
-    this.getAppointments();
+   // this.getAppointments();
+   this.appointementService.getAllAppointement().subscribe(data => {
+    this.appointements = data;
+    console.log(this.appointements);
+  });
       
   }
   getAppointments(): void {
@@ -27,5 +31,8 @@ export class DetailAppointementComponent implements OnInit {
       next : ()=> this.appointements=this.appointements.filter((A) => A.id != id)
     });
   }
+  redirection2(id: any) {
+    this.router.navigate([`/detail-appo/${id}`]);
 
+  }
 }
