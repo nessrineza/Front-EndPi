@@ -9,6 +9,7 @@ import { DetailAppointementComponent } from './frontOffice/detail-appointement/d
 import { PayementComponent } from './frontOffice/payement/payement.component';
 import { DisplayPayementComponent } from './frontOffice/display-payement/display-payement.component';
 import { DetailAppoComponent } from './frontOffice/detail-appo/detail-appo.component';
+import { StripePayementComponent } from './frontOffice/stripe-payement/stripe-payement.component';
 
 const routes: Routes = [
   {
@@ -51,6 +52,10 @@ const routes: Routes = [
       },
       {
         path:'detailappo/:id', component:DetailAppoComponent
+
+      },   
+      {
+        path:'stripe', component:StripePayementComponent
 
       },   
       
