@@ -19,6 +19,8 @@ import { DetailAppointementComponent } from './frontOffice/detail-appointement/d
 import { PayementComponent } from './frontOffice/payement/payement.component';
 import { DisplayPayementComponent } from './frontOffice/display-payement/display-payement.component';
 import { DetailAppoComponent } from './frontOffice/detail-appo/detail-appo.component';
+import { FullCalendarModule } from '@fullcalendar/angular';
+
 
 @NgModule({
   declarations: [
@@ -43,7 +45,8 @@ import { DetailAppoComponent } from './frontOffice/detail-appo/detail-appo.compo
     BrowserModule,
     AppRoutingModule, 
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    FullCalendarModule
    
   ],
   providers: [],

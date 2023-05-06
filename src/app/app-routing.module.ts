@@ -49,6 +49,10 @@ const routes: Routes = [
         ]
 
       },
+      {
+        path:'detailappo/:id', component:DetailAppoComponent
+
+      },   
       
     ]
   }

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Appointement } from '../../models/appointement';
 import { AppointementService } from '../services/appointement.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-detail-appointement',
@@ -12,13 +12,21 @@ export class DetailAppointementComponent implements OnInit {
   appointement:Appointement = new Appointement();
   appointements!: Appointement[];
   constructor(private appointementService: AppointementService,
-    private router : Router){}
+    private router : Router,
+    private route: ActivatedRoute){}
   ngOnInit(): void {
    // this.getAppointments();
    this.appointementService.getAllAppointement().subscribe(data => {
     this.appointements = data;
     console.log(this.appointements);
   });
+  const id = this.route.snapshot.paramMap.get('id');
+  this.appointementService.getAppponitementId(id)
+    .subscribe(res => {
+      this.appointement = res.body;
+    }, err => {
+      console.log(err);
+    });
       
   }
   getAppointments(): void {
@@ -34,5 +42,14 @@ export class DetailAppointementComponent implements OnInit {
   redirection2(id: any) {
     this.router.navigate([`/detail-appo/${id}`]);
 
+  }
+  refresh() {
+    const id = this.route.snapshot.paramMap.get('id');
+    this.appointementService.getAppponitementId(id)
+      .subscribe(res => {
+        this.appointement = res.body;
+      }, err => {
+        console.log(err);
+      });
   }
 }

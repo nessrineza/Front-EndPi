@@ -21,6 +21,8 @@ export class AppointementService {
   {
     return this.http.get<Appointement[]>(this.apiUrl + "/all");
   }
+ 
+  
   updateAppointement(id:any,appointement:Appointement){
     return this.http.put(this.apiUrl+"/update"+id,appointement);
   }

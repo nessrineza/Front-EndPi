@@ -1,42 +1,33 @@
-
-<div class="row">
-    <div class="col-6" style="margin-left: 40px;margin-top:20px;">
-
-<form #f="ngForm" (ngSubmit)="ajouter()">
-    
-    <div class="form-group">
-        <label>appointment Date </label>
-        <input class="form-control" type="Date" name="appointmentDate" #appointmentDate="ngModel" [(ngModel)]="appointement.appointmentDate"  >
-        <div class="alert alert-danger" *ngIf="appointmentDate.invalid && appointmentDate.touched">
-            <div *ngIf="appointmentDate.errors?.['required']">appointment Start Time is required</div>
-      </div>
-     </div>
-     <div class="form-group">
-        <label>appointment Start Time :</label>
-        <input class="form-control" type="time" name="appointmentStartTime" #appointmentStartTime="ngModel" [(ngModel)]="appointement.appointmentStartTime" >
-        <div class="alert alert-danger" *ngIf="appointmentStartTime.invalid && appointmentStartTime.touched">
-            <div *ngIf="appointmentStartTime.errors?.['required']">appointment Start Time is required</div>
-            
-        </div>
-    </div>
-    <div class="form-group">
-        <label>appointment End Time :</label>
-        <input class="form-control" type="time" name="appointmentEndTime" #appointmentEndTime="ngModel" [(ngModel)]="appointement.appointmentEndTime" >
-        
+<div class="background-image" style="background: url('/assets/front/img/image.jpg') no-repeat center center fixed; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;">
+    <div class="row">
+      <div class="col-6 offset-3 text-center" style="margin-top: 20px;">
+        <form #f="ngForm" (ngSubmit)="ajouter()" class="form-container" style="animation: slideInUp 0.5s;">
+          <div class="form-group">
+            <label>appointment Date </label>
+            <input class="form-control" type="Date" name="appointmentDate" #appointmentDate="ngModel" [(ngModel)]="appointement.appointmentDate">
+            <div class="alert alert-danger" *ngIf="appointmentDate.invalid && appointmentDate.touched">
+              <div *ngIf="appointmentDate.errors?.['required']">appointment Start Time is required</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>appointment Start Time :</label>
+            <input class="form-control" type="time" name="appointmentStartTime" #appointmentStartTime="ngModel" [(ngModel)]="appointement.appointmentStartTime">
+            <div class="alert alert-danger" *ngIf="appointmentStartTime.invalid && appointmentStartTime.touched">
+              <div *ngIf="appointmentStartTime.errors?.['required']">appointment Start Time is required</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>appointment End Time :</label>
+            <input class="form-control" type="time" name="appointmentEndTime" #appointmentEndTime="ngModel" [(ngModel)]="appointement.appointmentEndTime">
             <div *ngIf="appointmentStartTime.errors?.['required']">appointment End Time is required</div>
-            
-        </div>
-    
-
-    
-    <br>
-    <div class="form-group">
-        
-       <button class="btn btn-success pull-right" [disabled]="f.invalid"> Save</button>
+          </div>
+          <br>
+          <div class="form-group">
+            <button class="btn btn-success pull-right"  [routerLink]="['/user/DetailAppointementComponent']"(click)="ajouter()" [disabled]="f.invalid" style="animation: pulse 1s ease-in-out infinite;">Save</button>
+          </div>
+        </form>
+        <button  class="btn btn-outline-secondary mx-2" [routerLink]="['/user/DetailAppointementComponent']">Go back </button>
+      </div>
     </div>
-   
-
-</form >
-    
-
-
+  </div>
+  
