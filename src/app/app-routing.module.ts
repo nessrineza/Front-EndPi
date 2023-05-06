@@ -10,6 +10,7 @@ import { PayementComponent } from './frontOffice/payement/payement.component';
 import { DisplayPayementComponent } from './frontOffice/display-payement/display-payement.component';
 import { DetailAppoComponent } from './frontOffice/detail-appo/detail-appo.component';
 import { StripePayementComponent } from './frontOffice/stripe-payement/stripe-payement.component';
+import { FullCalanderComponent } from './frontOffice/full-calander/full-calander.component';
 
 const routes: Routes = [
   {
@@ -56,6 +57,9 @@ const routes: Routes = [
       },   
       {
         path:'stripe', component:StripePayementComponent
+
+      },    {
+        path:'CalanderofAppointement', component:FullCalanderComponent
 
       },   
       

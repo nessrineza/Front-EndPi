@@ -21,6 +21,7 @@ import { DisplayPayementComponent } from './frontOffice/display-payement/display
 import { DetailAppoComponent } from './frontOffice/detail-appo/detail-appo.component';
 import { FullCalendarModule } from '@fullcalendar/angular';
 import { StripePayementComponent } from './frontOffice/stripe-payement/stripe-payement.component';
+import { FullCalanderComponent } from './frontOffice/full-calander/full-calander.component';
 
 
 @NgModule({
@@ -40,7 +41,8 @@ import { StripePayementComponent } from './frontOffice/stripe-payement/stripe-pa
     PayementComponent,
     DisplayPayementComponent,
     DetailAppoComponent,
-    StripePayementComponent
+    StripePayementComponent,
+    FullCalanderComponent
    
   ],
   imports: [
