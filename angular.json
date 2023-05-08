@@ -14,7 +14,7 @@
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "preserveSymlinks": true,
-            
+
             "outputPath": "dist/welcamp",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -27,8 +27,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
-            ],
+              "src/styles.css"   ],
             "scripts": [
               "node_modules/chart.js/dist/chart.js"
             ]

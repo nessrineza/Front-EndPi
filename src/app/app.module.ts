@@ -21,7 +21,7 @@ import {  RichTextEditorModule } from '@syncfusion/ej2-angular-richtexteditor';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommentBackComponent } from './backOffice/comment-back/comment-back.component';
 import { PublicationBackComponent } from './backOffice/publication-back/publication-back.component';
-
+import { IShareButtons } from 'ngx-sharebuttons';
 @NgModule({
   declarations: [
     AppComponent,
