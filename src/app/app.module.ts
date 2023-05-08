@@ -25,6 +25,8 @@ import { FullCalanderComponent } from './frontOffice/full-calander/full-calander
 
 import { DialogComponentComponent } from './frontOffice/dialog-component/dialog-component.component';
 import { ReminderComponent } from './frontOffice/reminder/reminder.component';
+import { PayementFComponent } from './backOffice/payementF/payementF.component';
+import{ appointementBComponent} from './backOffice/appointementB/appointement.component';
 
 
 
@@ -49,7 +51,9 @@ import { ReminderComponent } from './frontOffice/reminder/reminder.component';
     StripePayementComponent,
     FullCalanderComponent,
     DialogComponentComponent,
-    ReminderComponent
+    ReminderComponent,
+    PayementFComponent,
+    appointementBComponent,
    
   ],
   imports: [

@@ -12,7 +12,8 @@ import { DetailAppoComponent } from './frontOffice/detail-appo/detail-appo.compo
 import { StripePayementComponent } from './frontOffice/stripe-payement/stripe-payement.component';
 import { FullCalanderComponent } from './frontOffice/full-calander/full-calander.component';
 import { ReminderComponent } from './frontOffice/reminder/reminder.component';
-
+import { PayementFComponent} from './backOffice/payementF/payementF.component';
+import { appointementBComponent } from './backOffice/appointementB/appointement.component';
 const routes: Routes = [
   {
     path:'admin',
@@ -21,7 +22,14 @@ const routes: Routes = [
       {
         path:'admin',
         component:BodyAdminComponent
-      }
+      },
+      {
+        path: 'payement', component: PayementFComponent
+
+      }, {
+        path: 'appointement', component: appointementBComponent
+
+      },   
     ]
   },
   {
@@ -52,6 +60,7 @@ const routes: Routes = [
         ]
 
       },
+      
       {
         path:'detailappo/:id', component:DetailAppoComponent
 

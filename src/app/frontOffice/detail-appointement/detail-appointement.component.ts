@@ -52,4 +52,31 @@ export class DetailAppointementComponent implements OnInit {
         console.log(err);
       });
   }
+  triggerReminder() {
+    this.appointementService.getReminders().subscribe(
+      data => {
+        console.log(data); // handle success response
+        this.displayNotification();
+      },
+      error => console.log(error) // handle error response
+    );
+  }
+
+  displayNotification() {
+    if (Notification.permission === 'granted') {
+      const notification = new Notification('Reminder', {
+        body: 'You have an appointment tomorrow',
+        icon: 'assets/notification-icon.png'
+      });
+    } else if (Notification.permission !== 'denied') {
+      Notification.requestPermission().then(permission => {
+        if (permission === 'granted') {
+          const notification = new Notification('Reminder', {
+            body: 'You have an appointment tomorrow',
+            icon: 'assets/notification-icon.png'
+          });
+        }
+      });
+    }
+  }
 }
