@@ -29,6 +29,12 @@ export class PublicationService {
     deletePublication(idPublication : any){
       return  this.httpClient.delete(`${this.API_URL}/delete/${idPublication}`)
     }
+    likePublication(idPublication:any,publication:any){
+      return this.httpClient.put(`${this.API_URL}/likes/${idPublication}`,publication)
+}
+reportPublication(idPublication:any,publication:any){
+  return this.httpClient.put(`${this.API_URL}/report/${idPublication}`,publication)
+}
 
   }
 

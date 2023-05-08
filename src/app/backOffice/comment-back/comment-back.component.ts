@@ -2,16 +2,15 @@ import { Component, OnInit } from '@angular/core';
 import { Comment } from 'src/app/shared/model/comment';
 import { CommentService } from 'src/app/shared/service/comment.service';
 import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { Publication } from '../shared/model/publication';
-import { PublicationService } from '../shared/service/publication-service';
 import { ActivatedRoute } from '@angular/router';
-
+import { Publication } from 'src/app/shared/model/publication';
+import { PublicationService } from 'src/app/shared/service/publication-service';
 @Component({
-  selector: 'app-comment',
-  templateUrl: './comment.component.html',
-  styleUrls: ['./comment.component.css']
+  selector: 'app-comment-back',
+  templateUrl: './comment-back.component.html',
+  styleUrls: ['./comment-back.component.css']
 })
-export class CommentComponent {
+export class CommentBackComponent {
 
 
   listComments : any;
@@ -62,7 +61,6 @@ pseudo:null
   }
   likeComment(idComment:any,comment:any){this.commentService.likeComment(idComment,comment).subscribe();}
   reportComment(idComment:any,comment:any){this.commentService.reportComment(idComment,comment).subscribe();}
-  hahaComment(idComment:any,comment:any){this.commentService.hahaComment(idComment,comment).subscribe();}
 
   deleteComment(idComment : any){
     this.commentService.deleteComment(idComment).subscribe(() => this.getAllComments());
@@ -101,4 +99,3 @@ pseudo:null
 function fetchData(): any {
   throw new Error('Function not implemented.');
 }
-

@@ -6,6 +6,8 @@ import { AllTemplateUserComponent } from './frontOffice/all-template-user/all-te
 import { BodyUserComponent } from './frontOffice/body-user/body-user.component';
 import { PublicationComponent } from './publication/publication.component';
 import { CommentComponent } from './comment/comment.component';
+import { CommentBackComponent } from './backOffice/comment-back/comment-back.component';
+import { PublicationBackComponent } from './backOffice/publication-back/publication-back.component';
 
 const routes: Routes = [
   {
@@ -27,9 +29,15 @@ const routes: Routes = [
         component:BodyUserComponent
       }
     ]
-  },{ path: 'pub',
+  },
+  { path: 'pub',
   component:PublicationComponent,
-  },{ path: 'com/:idPub',
+  }, { path: 'comadmin',
+  component:CommentBackComponent,
+  },{ path: 'pubadmin',
+  component:PublicationBackComponent,
+  },
+  { path: 'com/:idPub',
   component:CommentComponent,
   }
 ];

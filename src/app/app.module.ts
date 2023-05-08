@@ -16,6 +16,11 @@ import { FormsModule } from '@angular/forms';
 import { PublicationComponent } from './publication/publication.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CommentComponent } from './comment/comment.component';
+import {  RichTextEditorModule } from '@syncfusion/ej2-angular-richtexteditor';
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CommentBackComponent } from './backOffice/comment-back/comment-back.component';
+import { PublicationBackComponent } from './backOffice/publication-back/publication-back.component';
 
 @NgModule({
   declarations: [
@@ -28,15 +33,16 @@ import { CommentComponent } from './comment/comment.component';
     AllTemplateUserComponent,
     BodyUserComponent,
     FooterUserComponent,
-    HeaderUserComponent,PublicationComponent, CommentComponent
+    HeaderUserComponent,PublicationComponent, CommentComponent, CommentBackComponent, PublicationBackComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,FormsModule,HttpClientModule
+    AppRoutingModule,FormsModule,HttpClientModule,RichTextEditorModule,  BrowserAnimationsModule
 
 
   ],
   providers: [],
   bootstrap: [AppComponent]
+
 })
 export class AppModule { }

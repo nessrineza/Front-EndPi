@@ -7,6 +7,7 @@ import { Publication } from '../model/publication';
   providedIn: 'root'
 })
 export class CommentService {
+
   readonly API_URL = 'http://localhost:8089/SpringMVC/Comment';
 
   constructor(private httpClient: HttpClient) { }
@@ -28,5 +29,11 @@ export class CommentService {
     }
     likeComment(idComment:any,comment:any){
       return this.httpClient.put(`${this.API_URL}/likes/${idComment}`,comment)
+}
+reportComment(idComment:any,comment:any){
+  return this.httpClient.put(`${this.API_URL}/report/${idComment}`,comment)
+}
+hahaComment(idComment:any,comment:any){
+  return this.httpClient.put(`${this.API_URL}/haha/${idComment}`,comment)
 }
 }

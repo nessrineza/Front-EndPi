@@ -4,18 +4,12 @@ import { PublicationService } from 'src/app/shared/service/publication-service';
 import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ToolbarService, LinkService, ImageService, HtmlEditorService, QuickToolbarService, TableService } from '@syncfusion/ej2-angular-richtexteditor';
 import { DomSanitizer } from '@angular/platform-browser';
-
-
-
-
 @Component({
-  selector: 'app-Publication',
-  templateUrl: './publication.component.html',
-  styleUrls: ['./publication.component.css'],
-  providers: [ToolbarService, LinkService, ImageService, HtmlEditorService,QuickToolbarService,TableService]
-
+  selector: 'app-publication-back',
+  templateUrl: './publication-back.component.html',
+  styleUrls: ['./publication-back.component.css']
 })
-export class PublicationComponent implements OnInit {
+export class PublicationBackComponent {
   public tools: Object = {
     items: ['Bold', 'Italic', 'Underline', 'StrikeThrough',
         'FontName', 'FontSize', 'FontColor', 'BackgroundColor',
@@ -113,5 +107,13 @@ favoris:0
 
     return plainText;
   }
+
+
+
+
+
+
+
+
 
 }

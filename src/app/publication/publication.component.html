@@ -1,63 +1,5 @@
-
-<section id="topbar" class="d-flex align-items-center">
-  <div class="container d-flex justify-content-center justify-content-md-between">
-    <div class="contact-info d-flex align-items-center">
-      <i class="bi bi-envelope-fill"></i><a href="mailto:contact@example.com">E-rini@gmail.com</a>
-      <i class="bi bi-phone-fill phone-icon"></i> +1 5589 55488 55
-    </div>
-    <div class="social-links d-none d-md-block">
-      <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
-      <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-      <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-      <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
-    </div>
-  </div>
-</section>
-
-<!-- ======= Header ======= -->
-<header id="header" class="d-flex align-items-center">
-  <div class="container d-flex align-items-center">
-
-    <h1 class="logo me-auto"><a href="index.html">E-Rini</a></h1>
-    <!-- Uncomment below if you prefer to use an image logo -->
-    <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
-
-    <nav id="navbar" class="navbar">
-      <ul>
-        <li><a class="nav-link scrollto " href="#hero">Home</a></li>
-        <li><a class="nav-link scrollto" href="#about">About</a></li>
-        <li><a class="nav-link scrollto" href="#services">Announcement</a></li>
-        <li><a class="nav-link scrollto " href="#portfolio">Appointement</a></li>
-        <li><a class="nav-link scrollto active" href="#team">Forum</a></li>
-        <li><a class="nav-link scrollto" href="#team">Claim</a></li>
-        <li><a class="nav-link scrollto" href="#team">Sponsoring</a></li>
-        <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
-          <ul>
-            <li><a href="#">Drop Down 1</a></li>
-            <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
-              <ul>
-                <li><a href="#">Deep Drop Down 1</a></li>
-                <li><a href="#">Deep Drop Down 2</a></li>
-                <li><a href="#">Deep Drop Down 3</a></li>
-                <li><a href="#">Deep Drop Down 4</a></li>
-                <li><a href="#">Deep Drop Down 5</a></li>
-              </ul>
-            </li>
-            <li><a href="#">Drop Down 2</a></li>
-            <li><a href="#">Drop Down 3</a></li>
-            <li><a href="#">Drop Down 4</a></li>
-          </ul>
-        </li>
-        <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
-        <li><a class="getstarted scrollto" href="#about">Get Started</a></li>
-      </ul>
-      <i class="bi bi-list mobile-nav-toggle"></i>
-    </nav><!-- .navbar -->
-
-  </div>
-</header>
-<div class="row">
-  <div class="row">
+<app-header-user></app-header-user><div class="row">
+  <div class="row" style="margin-top: 50px;margin-left: 40px;">
       <div class="col-md-12">
 
           <div class="row">
@@ -152,27 +94,17 @@
                                   [ngModelOptions]="{standalone : true}">
                           </div>
                          <div class="row" class="input-group mb-3">
-                              <textarea type="text" class="form-control"
-                               placeholder="Contenu" [(ngModel)]="publication.description"
-                                  [ngModelOptions]="{standalone : true}"></textarea>
+                             <!--begin-->
+                            <ejs-richtexteditor [enableHtmlSanitizer]="true" [toolbarSettings]="tools" placeholder="Contenu" [(ngModel)]="publication.description"
+                            [ngModelOptions]="{standalone : true}"><ng-template #valueTempalte ><p>Wooow</p></ng-template>
+                            </ejs-richtexteditor>
                           </div>
-                          <div class="row" class="input-group mb-3">
-                              <input type="number" class="form-control" placeholder="Favoris" [(ngModel)]="publication.favoris"
-                                  [ngModelOptions]="{standalone : true}">
-                          </div>
-                          <div class="row" class="input-group mb-3">
-                              <input type="number" class="form-control" placeholder="Report" [(ngModel)]="publication.report"
-                                  [ngModelOptions]="{standalone : true}">
-                          </div>
-                          <div class="row" class="input-group mb-3">
-                            <input type="date" class="form-control" placeholder="Date" [(ngModel)]="publication.date"
-                                [ngModelOptions]="{standalone : true}">
-                        </div>
+<!--end-->
                           <br>
                           <div class="d-flex justify-content-center">
 
                           <button type="button" class="badge rounded-pill bg-success" style="padding: 0.7rem 1rem; font-size: 1.1rem;"
-                          (click)="addPublication(publication)"  (click)="modal1.close('Save click')">Add</button>
+                          (click)="addPublication(publication)" onclick="location.reload();" (click)="modal1.close('Save click')">Add</button>
                           <button type="button" class="badge rounded-pill bg-secondary" style="padding: 0.7rem 1rem; font-size: 1.1rem;" (click)="modal1.close('Save click')" >Cancel</button>
                           </div>
                           <br>
@@ -187,32 +119,7 @@
   </div>
 
   <!-- ======= Footer ======= -->
-<footer id="footer">
-  <div class="container">
-    <h3>E-Rini</h3>
-    <p>Discover your dream home with ease on our premier real estate platform</p>
-    <div class="social-links">
-      <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-      <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-      <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-      <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-      <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-    </div>
-    <div class="copyright">
-      &copy; Copyright <strong><span>Green</span></strong>. All Rights Reserved
-    </div>
-    <div class="credits">
-      <!-- All the links in the footer should remain intact. -->
-      <!-- You can delete the links only if you purchased the pro version. -->
-      <!-- Licensing information: https://bootstrapmade.com/license/ -->
-      <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/green-free-one-page-bootstrap-template/ -->
-      Designed by <a href="https://bootstrapmade.com/">Go4fev</a>
-    </div>
-  </div>
-</footer><!-- End Footer -->
-
-<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
+<app-footer-user></app-footer-user>
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
