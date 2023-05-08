@@ -23,6 +23,11 @@ import { FullCalendarModule } from '@fullcalendar/angular';
 import { StripePayementComponent } from './frontOffice/stripe-payement/stripe-payement.component';
 import { FullCalanderComponent } from './frontOffice/full-calander/full-calander.component';
 
+import { DialogComponentComponent } from './frontOffice/dialog-component/dialog-component.component';
+import { ReminderComponent } from './frontOffice/reminder/reminder.component';
+
+
+
 
 @NgModule({
   declarations: [
@@ -42,7 +47,9 @@ import { FullCalanderComponent } from './frontOffice/full-calander/full-calander
     DisplayPayementComponent,
     DetailAppoComponent,
     StripePayementComponent,
-    FullCalanderComponent
+    FullCalanderComponent,
+    DialogComponentComponent,
+    ReminderComponent
    
   ],
   imports: [
@@ -50,7 +57,9 @@ import { FullCalanderComponent } from './frontOffice/full-calander/full-calander
     AppRoutingModule, 
     HttpClientModule,
     FormsModule,
-    FullCalendarModule
+    FullCalendarModule,
+   
+    
    
   ],
   providers: [],

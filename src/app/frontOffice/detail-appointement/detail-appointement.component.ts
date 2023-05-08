@@ -15,7 +15,7 @@ export class DetailAppointementComponent implements OnInit {
     private router : Router,
     private route: ActivatedRoute){}
   ngOnInit(): void {
-   // this.getAppointments();
+    this.getAppointments();
    this.appointementService.getAllAppointement().subscribe(data => {
     this.appointements = data;
     console.log(this.appointements);

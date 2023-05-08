@@ -1,4 +1,4 @@
-import { HttpClient ,HttpResponse } from '@angular/common/http';
+import { HttpClient ,HttpParams,HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Appointement } from '../../models/appointement';
@@ -36,4 +36,8 @@ export class AppointementService {
   public getAppponitementId(id: any): Observable<HttpResponse<any>> {
     return this.http.get(`${this.apiUrl}/get/${id}`,{observe : 'response'});
   }
+  getReminders(): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/reminders`);
+  }
+  
 }

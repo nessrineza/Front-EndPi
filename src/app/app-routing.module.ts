@@ -11,6 +11,7 @@ import { DisplayPayementComponent } from './frontOffice/display-payement/display
 import { DetailAppoComponent } from './frontOffice/detail-appo/detail-appo.component';
 import { StripePayementComponent } from './frontOffice/stripe-payement/stripe-payement.component';
 import { FullCalanderComponent } from './frontOffice/full-calander/full-calander.component';
+import { ReminderComponent } from './frontOffice/reminder/reminder.component';
 
 const routes: Routes = [
   {
@@ -58,8 +59,13 @@ const routes: Routes = [
       {
         path:'stripe', component:StripePayementComponent
 
-      },    {
+      },  
+        {
         path:'CalanderofAppointement', component:FullCalanderComponent
+
+      },   
+      {
+        path:'Reminder', component:ReminderComponent
 
       },   
       
