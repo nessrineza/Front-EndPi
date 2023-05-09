@@ -81,10 +81,11 @@
 <div class="container-fluid py-3" style="background-color: #ffffff;">
 
   <share-buttons theme="modern-dark"
-    [include]="['copy', 'facebook', 'email', 'messenger', 'print',  'sms', 'twitter', 'whatsapp']"
+    [include]="['copy', 'email', 'messenger', 'print',  'twitter', 'whatsapp', 'mix']"
     [showIcon]="true"
     [showText]="true"
-    url="https://rodrigo.kamada.com.br/"
+
+    url={{url}}
     description={{publication.subject}}
     twitterAccount="rodrigokamada"
     class="pt-5">

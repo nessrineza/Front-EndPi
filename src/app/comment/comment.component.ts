@@ -5,6 +5,8 @@ import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Publication } from '../shared/model/publication';
 import { PublicationService } from '../shared/service/publication-service';
 import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
+
 
 @Component({
   selector: 'app-comment',
@@ -20,13 +22,18 @@ export class CommentComponent {
    publication!:Publication;
    closeResult! : string;
    idPub:any;
+   url:any;
 
-  constructor(private commentService : CommentService,private modalService: NgbModal,private route:ActivatedRoute,private publicationService:PublicationService) { }
+  constructor(private commentService : CommentService,private modalService: NgbModal,
+    private route:ActivatedRoute,private publicationService:PublicationService,private location: Location) { }
 
   ngOnInit(): void {
 this.idPub=this.route.snapshot.paramMap.get('idPub');
 this.getOnePublication();
 this.getAllComments();
+
+this.url = this.location.prepareExternalUrl(this.location.path());
+
 
     this.comment = {
       id:null,
@@ -40,6 +47,7 @@ pseudo:null
     }
 
   }
+
 
 
 
