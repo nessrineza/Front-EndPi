@@ -1,0 +1,21 @@
+<table>
+    <thead>
+      <tr>
+        
+        <th>Appointment Date</th>
+        <th>Start Time</th>
+        <th>End Time</th>
+        <th>Option</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let appointment of appointements">
+       
+        <td>{{ appointment.appointmentDate }}</td>
+        <td>{{ appointment.appointmentStartTime }}</td>
+        <td>{{ appointment.appointmentEndTime }}</td>
+       <td><button class="btn btn-danger" (click)="delete(appointment.id)">Delete</button></td>
+      </tr>
+    </tbody>
+  </table>
+  

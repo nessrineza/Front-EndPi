@@ -1,0 +1,46 @@
+<div id="login-form-wrap">
+  <h2>Register</h2>
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" id="login-form">
+    <p>
+      <input
+        class="input-class"
+        type="text"
+        id="username"
+        name="username"
+        placeholder="Username"
+        formControlName="username"
+      />
+    </p>
+    <p>
+      <input
+        class="input-class"
+        type="email"
+        id="email"
+        name="email"
+        placeholder="Address mail"
+        formControlName="email"
+      />
+    </p>
+    <p>
+      <input
+        class="input-class"
+        type="password"
+        id="password"
+        name="password"
+        placeholder="password"
+        formControlName="password"
+      />
+    </p>
+    <p class="errorMessage" [ngClass]="{'errorShow':wrongAuth}">username already taken ! </p>
+    <p>
+      <input class="submit" type="submit" value="Register" />
+    </p>
+  </form>
+  <div id="create-account-wrap">
+    <p>Go back to Login <a routerLink="/auth">Login</a></p>
+    <p></p>
+  </div>
+
+  <!--create-account-wrap-->
+</div>
+<!--login-form-wrap-->

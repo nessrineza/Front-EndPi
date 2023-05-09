@@ -1,0 +1,35 @@
+<main id="main" class="main" >
+  <div>
+
+  </div>
+  <table class="table table-hover" style="margin:100px 20px">
+    <thead>
+    <tr>
+      <th scope="col">username</th>
+      <th scope="col">email</th>
+      <th scope="col">first name</th>
+      <th scope="col">last name</th>
+      <th scope="col">Blocked</th>
+      <th scope="col">Role</th>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let user of users">
+      <th>{{user.username}}</th>
+      <td>{{user.email}}</td>
+      <td>{{user.firstName}}</td>
+      <td>{{user.lastName}}</td>
+      <td>{{user.blocked}}</td>
+      <td>{{user.roles[0].name=="ROLE_ADMIN" ? "role admin" : "role user"}}</td>
+      <td>
+        <i (click)="delete(user.id)" style="margin-right:5px;cursor: pointer;" class="bi bi-trash"></i>
+        <i *ngIf="user.blocked == false; else elseBlock" (click)="block(user.id)" style="color:red;cursor: pointer;" class="bi bi-x-circle"></i>
+        <ng-template #elseBlock>
+          <i (click)="unblock(user.id)" style="color:green;cursor: pointer;" class="bi bi-check-circle"></i>
+        </ng-template>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</main>

@@ -1,0 +1,36 @@
+<div id="login-form-wrap">
+  <h2>Login</h2>
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" id="login-form">
+    <p>
+      <input
+        class="input-class"
+        type="text"
+        id="username"
+        name="username"
+        placeholder="Username"
+        formControlName="username"
+      />
+    </p>
+    <p>
+      <input
+        class="input-class"
+        type="password"
+        id="email"
+        name="password"
+        placeholder="password"
+        formControlName="password"
+      />
+    </p>
+    <p class="errorMessage" [ngClass]="{'errorShow':wrongAuth}">authentication data are wrong !</p>
+    <p>
+      <input class="submit" type="submit" value="Login" />
+    </p>
+  </form>
+  <div id="create-account-wrap">
+    <p>Not a member? <a routerLink="/auth/signup">Create Account</a></p>
+    <p></p>
+  </div>
+
+  <!--create-account-wrap-->
+</div>
+<!--login-form-wrap-->
