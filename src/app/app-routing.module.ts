@@ -1,9 +1,17 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AllTemplateAdminComponent } from './backOffice/all-template-admin/all-template-admin.component';
 import { BodyAdminComponent } from './backOffice/body-admin/body-admin.component';
 import { AllTemplateUserComponent } from './frontOffice/all-template-user/all-template-user.component';
 import { BodyUserComponent } from './frontOffice/body-user/body-user.component';
+
+import { ListClaimComponent } from './list-claim/list-claim.component';
+import { AddClaimComponent } from './add-claim/add-claim.component';
+import { AddStockComponent } from './add-stock/add-stock.component';
+import { StockListComponent } from './stock-list/stock-list.component';
+import { StockUpdateComponent } from './backOffice/stock-update/stock-update.component';
+
+
 import { AppointementComponent } from './frontOffice/appointement/appointement.component';
 import { DetailAppointementComponent } from './frontOffice/detail-appointement/detail-appointement.component';
 import { PayementComponent } from './frontOffice/payement/payement.component';
@@ -14,12 +22,29 @@ import { FullCalanderComponent } from './frontOffice/full-calander/full-calander
 import { ReminderComponent } from './frontOffice/reminder/reminder.component';
 import { PayementFComponent} from './backOffice/payementF/payementF.component';
 import { appointementBComponent } from './backOffice/appointementB/appointement.component';
+
 const routes: Routes = [
   {
     path:'admin',
     component:AllTemplateAdminComponent,
     children:[
       {
+
+        path:'admin', component:BodyAdminComponent
+      },
+      {
+        path: 'Claims', component:ListClaimComponent
+      },
+      {
+        path: 'Stocks', component:StockListComponent
+      },
+      {
+        path: 'addstock', component:AddStockComponent
+      },
+      {
+        path: 'updatestock', component:StockUpdateComponent
+      }
+
         path:'admin',
         component:BodyAdminComponent
       },
@@ -30,13 +55,20 @@ const routes: Routes = [
         path: 'appointement', component: appointementBComponent
 
       },   
+
     ]
   },
   {
-    path:'user',
-    component:AllTemplateUserComponent,
+    path:'user', component:AllTemplateUserComponent,
     children:[
       {
+
+        path:'user', component:BodyUserComponent
+      },
+      {
+        path: 'frontclaim', component:AddClaimComponent
+      }
+
         path:'user',
         component:BodyUserComponent,
         
@@ -78,6 +110,7 @@ const routes: Routes = [
 
       },   
       
+
     ]
   }
 ];

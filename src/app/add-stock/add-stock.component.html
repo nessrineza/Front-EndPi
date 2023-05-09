@@ -1,0 +1,67 @@
+<div class="row">
+    <form [formGroup]="stockForm">
+
+      <div class="form-group">
+        <label for="quantity" style="color: #77dd77;">Quantity</label>
+    
+        <div class="input-group">
+    
+          <input type="number" formControlName="quantity" id="quantity" class="form-control" placeholder="Enter a starting bid" style="background-color: #d4f0d4;">
+          <small class="form-text" [ngClass]="{'text-danger': stockForm.controls['quantity'].value?.length === 0 || stockForm.controls['quantity'].untouched}" >
+            {{ stockForm.controls['quantity'].untouched ? 'Please enter a quantity' : '' }}
+          </small>
+          <div></div>
+        </div>
+        
+      </div>
+    
+      <div class="form-group">
+        <label for="quantityMin" style="color: #77dd77;">QuantityMin</label>
+    
+        <div class="input-group">
+    
+          <input type="number" formControlName="quantityMin" id="quantityMin" class="form-control" placeholder="Enter a starting bid" style="background-color: #d4f0d4;">
+          <small class="form-text" [ngClass]="{'text-danger': stockForm.controls['quantityMin'].value?.length === 0 || stockForm.controls['quantityMin'].untouched}" >
+            {{ stockForm.controls['quantityMin'].untouched ? 'Please enter a quantityMin' : '' }}
+          </small>
+          <div></div>
+        </div>
+
+      </div>
+    
+      <div>
+        <label for="libelleStock" style="color: #77dd77;">Libelle</label>
+        <div></div>
+        <input formControlName="libelleStock" type="text" id="libelleStock" name="libelleStock" style="background-color: #d4f0d4;">
+        
+        <small class="form-text" [ngClass]="{'text-danger': stockForm.controls['libelleStock'].value?.length === 0 || stockForm.controls['libelleStock'].untouched}" >
+          {{ stockForm.controls['libelleStock'].untouched ? 'Please enter a libelleStock' : '' }}
+        </small> 
+      </div>
+    
+       <div class="form-group" >
+        <label for="exampleFormControlSelect1" style="color: #77dd77;">Checked</label>
+        <select formControlName="cheked" class="form-control" placeholder="click to check" style="background-color: #d4f0d4;">
+    
+          <option>oui</option>
+          <option>non</option>
+    
+        </select>
+      </div>
+    
+      <div class="form-group row">
+        <div class="col">
+          <label for="createdAt" style="color: #77dd77;">CreatedAt</label>
+          <input type="date" formControlName="createdAt" id="createdAt" class="form-control" placeholder="Select date" style="background-color: #d4f0d4;">
+          <small class="form-text" [ngClass]="{'text-danger': stockForm.controls['createdAt'].value?.length === 0 || stockForm.controls['createdAt'].untouched}" >
+            {{ stockForm.controls['createdAt'].untouched ? 'Please enter a date' : '' }}
+          </small> 
+        </div>
+    
+      </div>
+    
+    
+    
+      <button routerLink="/Stock" (click)="AddStocks()" class="btn btn-primary" type="submit" style="background-color: #77dd77; border-color: #77dd77;">ADD</button>
+    </form>
+  </div>

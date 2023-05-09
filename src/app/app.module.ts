@@ -12,6 +12,17 @@ import { AllTemplateUserComponent } from './frontOffice/all-template-user/all-te
 import { BodyUserComponent } from './frontOffice/body-user/body-user.component';
 import { FooterUserComponent } from './frontOffice/footer-user/footer-user.component';
 import { HeaderUserComponent } from './frontOffice/header-user/header-user.component';
+
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { ListClaimComponent } from './list-claim/list-claim.component';
+import { AddClaimComponent } from './add-claim/add-claim.component';
+import { CommonModule } from '@angular/common';
+import { AddStockComponent } from './add-stock/add-stock.component';
+import { StockListComponent } from './stock-list/stock-list.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { StockUpdateComponent } from './backOffice/stock-update/stock-update.component';
+
 import {HttpClientModule} from "@angular/common/http";
 import { AppointementComponent } from './frontOffice/appointement/appointement.component';
 import { FormsModule } from '@angular/forms';
@@ -31,6 +42,7 @@ import{ appointementBComponent} from './backOffice/appointementB/appointement.co
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,6 +55,23 @@ import{ appointementBComponent} from './backOffice/appointementB/appointement.co
     BodyUserComponent,
     FooterUserComponent,
     HeaderUserComponent,
+
+    ListClaimComponent,
+    AddClaimComponent,
+    AddStockComponent,
+
+    StockListComponent,
+      StockUpdateComponent
+  ],
+  imports: [
+    BrowserModule,
+   BrowserAnimationsModule,
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    CommonModule
+
     AppointementComponent,
     DetailAppointementComponent,
     PayementComponent,
@@ -65,6 +94,7 @@ import{ appointementBComponent} from './backOffice/appointementB/appointement.co
    
     
    
+
   ],
   providers: [],
   bootstrap: [AppComponent]
