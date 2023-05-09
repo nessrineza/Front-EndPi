@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient ,HttpParams,HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Appointement } from '../../models/appointement';
@@ -21,11 +21,23 @@ export class AppointementService {
   {
     return this.http.get<Appointement[]>(this.apiUrl + "/all");
   }
+ 
+  
   updateAppointement(id:any,appointement:Appointement){
     return this.http.put(this.apiUrl+"/update"+id,appointement);
   }
 
   deleteAppointement(id:any){
-    return this.http.delete(this.apiUrl+"/delete"+id);
+    return this.http.delete(this.apiUrl+"/delete/"+id);
   }
+ /* getAppponitementId(id:any): Observable<Appointement> {
+    return this.http.get<Appointement>(this.apiUrl+"/get/"+id);
+  }*/
+  public getAppponitementId(id: any): Observable<HttpResponse<any>> {
+    return this.http.get(`${this.apiUrl}/get/${id}`,{observe : 'response'});
+  }
+  getReminders(): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/reminders`);
+  }
+  
 }

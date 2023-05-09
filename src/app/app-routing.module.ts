@@ -6,7 +6,14 @@ import { AllTemplateUserComponent } from './frontOffice/all-template-user/all-te
 import { BodyUserComponent } from './frontOffice/body-user/body-user.component';
 import { AppointementComponent } from './frontOffice/appointement/appointement.component';
 import { DetailAppointementComponent } from './frontOffice/detail-appointement/detail-appointement.component';
-
+import { PayementComponent } from './frontOffice/payement/payement.component';
+import { DisplayPayementComponent } from './frontOffice/display-payement/display-payement.component';
+import { DetailAppoComponent } from './frontOffice/detail-appo/detail-appo.component';
+import { StripePayementComponent } from './frontOffice/stripe-payement/stripe-payement.component';
+import { FullCalanderComponent } from './frontOffice/full-calander/full-calander.component';
+import { ReminderComponent } from './frontOffice/reminder/reminder.component';
+import { PayementFComponent} from './backOffice/payementF/payementF.component';
+import { appointementBComponent } from './backOffice/appointementB/appointement.component';
 const routes: Routes = [
   {
     path:'admin',
@@ -15,7 +22,14 @@ const routes: Routes = [
       {
         path:'admin',
         component:BodyAdminComponent
-      }
+      },
+      {
+        path: 'payement', component: PayementFComponent
+
+      }, {
+        path: 'appointement', component: appointementBComponent
+
+      },   
     ]
   },
   {
@@ -28,12 +42,41 @@ const routes: Routes = [
         
       },
       {
-        path: 'appointments',      component:AppointementComponent
+        path: 'appointments',component:AppointementComponent
+      },
+     
+      {
+        path: 'payement', component: PayementComponent
+
       },
       {
-        path: 'DetailAppointementComponent', component: DetailAppointementComponent 
+        path: 'Displaypayement', component: DisplayPayementComponent
 
-      }
+      },    
+       {
+        path: 'DetailAppointementComponent', component: AllTemplateUserComponent ,children:[
+          {path:'' , component:DetailAppointementComponent},
+          {path:'detailappo/:id', component:DetailAppoComponent}
+        ]
+
+      },
+      
+      {
+        path:'detailappo/:id', component:DetailAppoComponent
+
+      },   
+      {
+        path:'stripe', component:StripePayementComponent
+
+      },  
+        {
+        path:'CalanderofAppointement', component:FullCalanderComponent
+
+      },   
+      {
+        path:'Reminder', component:ReminderComponent
+
+      },   
       
     ]
   }

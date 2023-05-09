@@ -16,6 +16,21 @@ import {HttpClientModule} from "@angular/common/http";
 import { AppointementComponent } from './frontOffice/appointement/appointement.component';
 import { FormsModule } from '@angular/forms';
 import { DetailAppointementComponent } from './frontOffice/detail-appointement/detail-appointement.component';
+import { PayementComponent } from './frontOffice/payement/payement.component';
+import { DisplayPayementComponent } from './frontOffice/display-payement/display-payement.component';
+import { DetailAppoComponent } from './frontOffice/detail-appo/detail-appo.component';
+import { FullCalendarModule } from '@fullcalendar/angular';
+import { StripePayementComponent } from './frontOffice/stripe-payement/stripe-payement.component';
+import { FullCalanderComponent } from './frontOffice/full-calander/full-calander.component';
+
+import { DialogComponentComponent } from './frontOffice/dialog-component/dialog-component.component';
+import { ReminderComponent } from './frontOffice/reminder/reminder.component';
+import { PayementFComponent } from './backOffice/payementF/payementF.component';
+import{ appointementBComponent} from './backOffice/appointementB/appointement.component';
+
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,13 +44,26 @@ import { DetailAppointementComponent } from './frontOffice/detail-appointement/d
     FooterUserComponent,
     HeaderUserComponent,
     AppointementComponent,
-    DetailAppointementComponent
+    DetailAppointementComponent,
+    PayementComponent,
+    DisplayPayementComponent,
+    DetailAppoComponent,
+    StripePayementComponent,
+    FullCalanderComponent,
+    DialogComponentComponent,
+    ReminderComponent,
+    PayementFComponent,
+    appointementBComponent,
+   
   ],
   imports: [
     BrowserModule,
     AppRoutingModule, 
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    FullCalendarModule,
+   
+    
    
   ],
   providers: [],

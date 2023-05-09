@@ -1,4 +1,4 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Payement } from 'src/app/models/Payement';
@@ -7,6 +7,7 @@ import { Payement } from 'src/app/models/Payement';
   providedIn: 'root'
 })
 export class PayementService {
+
   apiUrl : string = "http://localhost:8090/SpringMVC/Payement"
   
   constructor( private http : HttpClient) { }
@@ -18,11 +19,7 @@ export class PayementService {
 
     return this.http.post<Payement>(this.apiUrl + "/Add",Payement);
   }*/
-  add(payement: Payement): Observable<Payement> {
-    const headers = new HttpHeaders().set('Content-Type', 'application/json');
-    const options = { headers: headers };
-    return this.http.post<Payement>(this.apiUrl + '/Add', JSON.stringify(payement), options);
-  }
+ 
   
   public getAllPayement() : Observable<Payement[]>
   {

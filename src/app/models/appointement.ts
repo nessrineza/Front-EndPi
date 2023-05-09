@@ -1,7 +1,7 @@
 import { Time } from "@angular/common";
 import { AppointmentStatus } from "./AppointmentStatus";
 export class Appointement{
-    id! : number;
+    id! : Number;
     appointmentDate!: Date;
     appointmentStartTime!:Time;
     appointmentEndTime!:Time;
