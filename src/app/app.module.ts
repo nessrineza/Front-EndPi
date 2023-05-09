@@ -12,6 +12,27 @@ import { AllTemplateUserComponent } from './frontOffice/all-template-user/all-te
 import { BodyUserComponent } from './frontOffice/body-user/body-user.component';
 import { FooterUserComponent } from './frontOffice/footer-user/footer-user.component';
 import { HeaderUserComponent } from './frontOffice/header-user/header-user.component';
+import { HttpClientModule,  } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AnnouncementComponent } from './backOffice/announcement/announcement.component';
+import { ListAnnoncesComponent } from './backOffice/list-annonces/list-annonces.component';
+import { SponsoringComponent } from './backOffice/sponsoring/sponsoring.component';
+import { ListSponsoringsComponent } from './backOffice/list-sponsorings/list-sponsorings.component';
+import { UpdateannonceComponent } from './backOffice/updateannonce/updateannonce.component';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { FilterPipeModule } from 'ngx-filter-pipe';
+import { AddAnnonceComponent } from './backOffice/add-annonce/add-annonce.component';
+import { AnnonceAddComponent } from './backOffice/annonce-add/annonce-add.component';
+import { AnnonceAddFComponent } from './frontOffice/annonce-addF/annonce-addF.component';
+import { ListAnnonceComponent } from './frontOffice/listannonce/listannonce.component';
+import { UpdateAnnonceComponent } from './frontOffice/update-annonce/update-annonce.component';
+import { SponsoringsComponent } from './frontOffice/sponsorings/sponsorings.component';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
+
+
+
+
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -46,6 +67,7 @@ import{ appointementBComponent} from './backOffice/appointementB/appointement.co
 @NgModule({
   declarations: [
     AppComponent,
+    AnnouncementComponent,
     AllTemplateAdminComponent,
     BodyAdminComponent,
     FooterAdminComponent,
@@ -55,6 +77,41 @@ import{ appointementBComponent} from './backOffice/appointementB/appointement.co
     BodyUserComponent,
     FooterUserComponent,
     HeaderUserComponent,
+
+    ListAnnoncesComponent,
+    SponsoringComponent,
+    ListSponsoringsComponent,
+    UpdateannonceComponent,
+    AddAnnonceComponent,
+    AnnonceAddComponent,
+    AnnonceAddFComponent,
+    ListAnnonceComponent,
+    UpdateAnnonceComponent,
+    SponsoringsComponent,
+    ListSponsoringsComponent,
+  
+
+
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+
+    FormsModule ,
+    NgxPaginationModule,
+    FilterPipeModule,
+    NgbModalModule,
+
+
+
+
+
+
+
+
+
 
     ListClaimComponent,
     AddClaimComponent,
@@ -94,6 +151,7 @@ import{ appointementBComponent} from './backOffice/appointementB/appointement.co
    
     
    
+
 
   ],
   providers: [],
