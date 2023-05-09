@@ -1,11 +1,8 @@
-import { User } from './user';
-
-
 export class Claim {
-    public id!:number;
-    public Subject!:string;
-    public Date!:Date;
-    public Description!:string;
-    
+    public id:any;
+    public subject:any;
+    public date:any;
+    public description:any;
+
 }
 

@@ -11,10 +11,10 @@ export class ClaimService {
   constructor(private http:HttpClient) { }
 
   //crud
-
+/*
   public addClaim(claim:Claim){
-    return this.http.post<Claim>(this.url+"/addClaim/",Claim);
-  }
+    return this.http.post<Claim>(this.url+"/addClaim/+idUser/"+idUser,Claim);
+  }*/
   public editClaim(claim:Claim){
     return this.http.put(this.url+"/editClaim/",claim);
   }

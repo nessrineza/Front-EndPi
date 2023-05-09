@@ -12,9 +12,17 @@ import { AllTemplateUserComponent } from './frontOffice/all-template-user/all-te
 import { BodyUserComponent } from './frontOffice/body-user/body-user.component';
 import { FooterUserComponent } from './frontOffice/footer-user/footer-user.component';
 import { HeaderUserComponent } from './frontOffice/header-user/header-user.component';
-import { ClaimComponent } from './frontOffice/claim/claim.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { ListClaimComponent } from './list-claim/list-claim.component';
+import { AddClaimComponent } from './add-claim/add-claim.component';
+import { CommonModule } from '@angular/common';
+import { AddStockComponent } from './add-stock/add-stock.component';
+import { StockListComponent } from './stock-list/stock-list.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { StockUpdateComponent } from './backOffice/stock-update/stock-update.component';
+
+
 
 @NgModule({
   declarations: [
@@ -28,13 +36,21 @@ import { HttpClientModule } from '@angular/common/http';
     BodyUserComponent,
     FooterUserComponent,
     HeaderUserComponent,
-    ClaimComponent
+    ListClaimComponent,
+    AddClaimComponent,
+    AddStockComponent,
+
+    StockListComponent,
+      StockUpdateComponent
   ],
   imports: [
     BrowserModule,
+   BrowserAnimationsModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule,
+    CommonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
