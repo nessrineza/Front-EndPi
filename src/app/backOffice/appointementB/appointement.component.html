@@ -1,0 +1,34 @@
+<div class="content" style="margin: 0 auto;">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header">
+            <h4 class="card-title" style="margin-left: 40%; font-size: xx-large; color: coral">Appointment List</h4>
+          </div>
+          <div class="card-body">
+            <div class="row">
+              <div class="table-responsive col">
+                <table class="table">
+                  <thead class="text-primary">
+                    <tr>
+                      <th>Appointment Date</th>
+                      <th>Appointment Start Time</th>
+                      <th>Appointment End Time</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let appointment of appointements">
+                      <td>{{ appointment!.appointmentDate }}</td>
+                      <td>{{ appointment!.appointmentStartTime }}</td>
+                      <td>{{ appointment!.appointmentEndTime }}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

@@ -12,6 +12,7 @@ import { AllTemplateUserComponent } from './frontOffice/all-template-user/all-te
 import { BodyUserComponent } from './frontOffice/body-user/body-user.component';
 import { FooterUserComponent } from './frontOffice/footer-user/footer-user.component';
 import { HeaderUserComponent } from './frontOffice/header-user/header-user.component';
+
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ListClaimComponent } from './list-claim/list-claim.component';
@@ -21,6 +22,24 @@ import { AddStockComponent } from './add-stock/add-stock.component';
 import { StockListComponent } from './stock-list/stock-list.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { StockUpdateComponent } from './backOffice/stock-update/stock-update.component';
+
+import {HttpClientModule} from "@angular/common/http";
+import { AppointementComponent } from './frontOffice/appointement/appointement.component';
+import { FormsModule } from '@angular/forms';
+import { DetailAppointementComponent } from './frontOffice/detail-appointement/detail-appointement.component';
+import { PayementComponent } from './frontOffice/payement/payement.component';
+import { DisplayPayementComponent } from './frontOffice/display-payement/display-payement.component';
+import { DetailAppoComponent } from './frontOffice/detail-appo/detail-appo.component';
+import { FullCalendarModule } from '@fullcalendar/angular';
+import { StripePayementComponent } from './frontOffice/stripe-payement/stripe-payement.component';
+import { FullCalanderComponent } from './frontOffice/full-calander/full-calander.component';
+
+import { DialogComponentComponent } from './frontOffice/dialog-component/dialog-component.component';
+import { ReminderComponent } from './frontOffice/reminder/reminder.component';
+import { PayementFComponent } from './backOffice/payementF/payementF.component';
+import{ appointementBComponent} from './backOffice/appointementB/appointement.component';
+
+
 
 
 
@@ -36,6 +55,7 @@ import { StockUpdateComponent } from './backOffice/stock-update/stock-update.com
     BodyUserComponent,
     FooterUserComponent,
     HeaderUserComponent,
+
     ListClaimComponent,
     AddClaimComponent,
     AddStockComponent,
@@ -51,6 +71,30 @@ import { StockUpdateComponent } from './backOffice/stock-update/stock-update.com
     HttpClientModule,
     ReactiveFormsModule,
     CommonModule
+
+    AppointementComponent,
+    DetailAppointementComponent,
+    PayementComponent,
+    DisplayPayementComponent,
+    DetailAppoComponent,
+    StripePayementComponent,
+    FullCalanderComponent,
+    DialogComponentComponent,
+    ReminderComponent,
+    PayementFComponent,
+    appointementBComponent,
+   
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule, 
+    HttpClientModule,
+    FormsModule,
+    FullCalendarModule,
+   
+    
+   
+
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -4,11 +4,24 @@ import { AllTemplateAdminComponent } from './backOffice/all-template-admin/all-t
 import { BodyAdminComponent } from './backOffice/body-admin/body-admin.component';
 import { AllTemplateUserComponent } from './frontOffice/all-template-user/all-template-user.component';
 import { BodyUserComponent } from './frontOffice/body-user/body-user.component';
+
 import { ListClaimComponent } from './list-claim/list-claim.component';
 import { AddClaimComponent } from './add-claim/add-claim.component';
 import { AddStockComponent } from './add-stock/add-stock.component';
 import { StockListComponent } from './stock-list/stock-list.component';
 import { StockUpdateComponent } from './backOffice/stock-update/stock-update.component';
+
+
+import { AppointementComponent } from './frontOffice/appointement/appointement.component';
+import { DetailAppointementComponent } from './frontOffice/detail-appointement/detail-appointement.component';
+import { PayementComponent } from './frontOffice/payement/payement.component';
+import { DisplayPayementComponent } from './frontOffice/display-payement/display-payement.component';
+import { DetailAppoComponent } from './frontOffice/detail-appo/detail-appo.component';
+import { StripePayementComponent } from './frontOffice/stripe-payement/stripe-payement.component';
+import { FullCalanderComponent } from './frontOffice/full-calander/full-calander.component';
+import { ReminderComponent } from './frontOffice/reminder/reminder.component';
+import { PayementFComponent} from './backOffice/payementF/payementF.component';
+import { appointementBComponent } from './backOffice/appointementB/appointement.component';
 
 const routes: Routes = [
   {
@@ -16,6 +29,7 @@ const routes: Routes = [
     component:AllTemplateAdminComponent,
     children:[
       {
+
         path:'admin', component:BodyAdminComponent
       },
       {
@@ -30,17 +44,73 @@ const routes: Routes = [
       {
         path: 'updatestock', component:StockUpdateComponent
       }
+
+        path:'admin',
+        component:BodyAdminComponent
+      },
+      {
+        path: 'payement', component: PayementFComponent
+
+      }, {
+        path: 'appointement', component: appointementBComponent
+
+      },   
+
     ]
   },
   {
     path:'user', component:AllTemplateUserComponent,
     children:[
       {
+
         path:'user', component:BodyUserComponent
       },
       {
         path: 'frontclaim', component:AddClaimComponent
       }
+
+        path:'user',
+        component:BodyUserComponent,
+        
+      },
+      {
+        path: 'appointments',component:AppointementComponent
+      },
+     
+      {
+        path: 'payement', component: PayementComponent
+
+      },
+      {
+        path: 'Displaypayement', component: DisplayPayementComponent
+
+      },    
+       {
+        path: 'DetailAppointementComponent', component: AllTemplateUserComponent ,children:[
+          {path:'' , component:DetailAppointementComponent},
+          {path:'detailappo/:id', component:DetailAppoComponent}
+        ]
+
+      },
+      
+      {
+        path:'detailappo/:id', component:DetailAppoComponent
+
+      },   
+      {
+        path:'stripe', component:StripePayementComponent
+
+      },  
+        {
+        path:'CalanderofAppointement', component:FullCalanderComponent
+
+      },   
+      {
+        path:'Reminder', component:ReminderComponent
+
+      },   
+      
+
     ]
   }
 ];

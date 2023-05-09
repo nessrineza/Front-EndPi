@@ -1,0 +1,20 @@
+<table>
+    <thead>
+      <tr>
+        
+        <th>Amount</th>
+        <th>method of payement</th>
+        
+        <th>Option</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let payement of payements">
+       
+        <td>{{ payement.rising}}</td>
+        <td>{{ payement.type}}</td>
+       <td><button class="btn btn-danger" (click)="delete(payement.id)">Delete</button></td>
+      </tr>
+    </tbody>
+  </table>
+  
