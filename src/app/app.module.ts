@@ -21,7 +21,10 @@ import {  RichTextEditorModule } from '@syncfusion/ej2-angular-richtexteditor';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommentBackComponent } from './backOffice/comment-back/comment-back.component';
 import { PublicationBackComponent } from './backOffice/publication-back/publication-back.component';
-import { IShareButtons } from 'ngx-sharebuttons';
+import { ShareButtons, ShareButtonsModule } from 'ngx-sharebuttons/buttons';
+import { ShareIconsModule } from 'ngx-sharebuttons/icons';
+import { ShareButton, ShareButtonModule } from 'ngx-sharebuttons/button';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,7 +41,7 @@ import { IShareButtons } from 'ngx-sharebuttons';
   imports: [
     BrowserModule,
     AppRoutingModule,FormsModule,HttpClientModule,RichTextEditorModule,  BrowserAnimationsModule
-
+,ShareIconsModule,ShareButtonsModule,FontAwesomeModule
 
   ],
   providers: [],
