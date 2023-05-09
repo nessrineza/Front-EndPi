@@ -4,7 +4,7 @@ import { CommentService } from 'src/app/shared/service/comment.service';
 import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Publication } from '../shared/model/publication';
 import { PublicationService } from '../shared/service/publication-service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Location } from '@angular/common';
 
 
@@ -25,7 +25,7 @@ export class CommentComponent {
    url:any;
 
   constructor(private commentService : CommentService,private modalService: NgbModal,
-    private route:ActivatedRoute,private publicationService:PublicationService,private location: Location) { }
+    private route:ActivatedRoute,private publicationService:PublicationService,private location: Location,private router:Router) { }
 
   ngOnInit(): void {
 this.idPub=this.route.snapshot.paramMap.get('idPub');
@@ -80,6 +80,11 @@ pseudo:null
   {this.publicationService.likePublication(idpublication,publication).subscribe();}
   reportPublication(idpublication:any,publication:any)
   {this.publicationService.reportPublication(idpublication,publication).subscribe();}
+  reloadComponent() {
+    this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+      this.router.navigate([CommentComponent]);
+    });
+  }
   open(content: any) {
   this.modalService.open(content, {centered: true,size: 'xl',scrollable: true }).result.then((result: any) => {
     this.closeResult = `Closed with: ${result}`;

@@ -130,7 +130,7 @@
 
 
                 <textarea class="form-control" id="textAreaExample" rows="3" cols="80"
-                  style="background: #e4e2e2;">{{ item.content }}</textarea>
+                  disabled style="background: #e4e2e2;">{{ item.content }}</textarea>
               </div>
             </div>
 
@@ -143,7 +143,8 @@
 
               <a class="bi bi-emoji-angry text-warning m-3">{{item.report}}</a>
 
-              <a  (click)="likeComment(item.id,item)" onclick="location.reload();" class="d-flex align-items-center me-3">
+              <a  (click)="likeComment(item.id,item);reloadComponent()"
+              class="d-flex align-items-center me-3">
 
                 <i class="far fa-thumbs-up me-2"></i>
                 <p class="mb-0"  >like </p> <i  class="bi bi-heart "></i>
@@ -172,8 +173,7 @@
           </div>
             <div class="d-flex flex-start w-100">
               <img class="rounded-circle shadow-1-strong me-3"
-                src="https://scontent.ftun10-1.fna.fbcdn.net/v/t39.30808-6/306321232_2229039213917927_837900650589069180_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=IVoM0mbltOcAX_xLu59&_nc_ht=scontent.ftun10-1.fna&oh=00_AfCjUPh3MPKZP5lsYg8S5hYnXcNCj7pN_dwGm2nYvVj_SA&oe=64596D9F"
-                 alt="avatar" width="40"
+src="https://scontent.ftun10-1.fna.fbcdn.net/v/t39.30808-6/306321232_2229039213917927_837900650589069180_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=ApMqFHXC_4QAX85jZF8&_nc_ht=scontent.ftun10-1.fna&oh=00_AfDHMn4GyYpHy6cWGX-0RNytd6m6Swoi7wGI9WfAORkPiw&oe=645F5C5F"                 alt="avatar" width="40"
                 height="40" />
                 <form><div class="form-outline w-100" >
                 <textarea id="sec1" class="form-control"  rows="3" cols="110"
