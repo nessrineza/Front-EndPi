@@ -39,6 +39,35 @@
   <div class="col-md-12">
     <div class="card card-user">
       <div class="card-header" style="background-color: #4da8b0;">
-
+        <h5 class="card-title text-white">Add Sponsoring</h5>
+      </div>
+      <div class="card-body">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+        <form [formGroup]="this.sponsoringService.dataForm" (ngSubmit)="addsponsoring()" class="animate__animated animate__fadeInUp">
+          <div class="form-group">
+            <label for="type" style="color: #FF7F50;">Type</label>
+            <input type="text" class="form-control" formControlName="type" id="type" placeholder="Name">
+          </div>
+          <div class="form-group">
+            <label for="description" style="color: #FF7F50;">Description</label>
+            <input type="text" class="form-control" formControlName="description" id="description" placeholder="Description">
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="priceS" style="color: #FF7F50;">Price</label>
+              <input type="number" class="form-control" formControlName="priceS" id="priceS" placeholder="Price">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="quantite" style="color: #FF7F50;">Quantite</label>
+              <input type="number" class="form-control" formControlName="quantite" id="quantite" placeholder="User ID">
+            </div>
+          </div>
+          <div class="form-group">
+            <button type="submit" class="btn btn-success btn-round float-right animate__animated animate__pulse animate__infinite"  style="background-color: #7dc26b;" routerLink="/user/sponsoringlist" >Add Sponsoring</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
 </div>
 

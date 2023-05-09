@@ -9,11 +9,11 @@ import Swal from 'sweetalert2';
 
 
 @Component({
-  selector: 'app-sponsoring',
-  templateUrl: './sponsoring.component.html',
-  styleUrls: ['./sponsoring.component.css']
+  selector: 'app-sponsorings',
+  templateUrl: './sponsorings.component.html',
+  styleUrls: ['./sponsorings.component.css']
 })
-export class SponsoringComponent implements OnInit {
+export class SponsoringsComponent implements OnInit {
   files: string[] = [];
   selectedFiles!: FileList;
   images: string[] = [];
@@ -54,7 +54,6 @@ export class SponsoringComponent implements OnInit {
   // //   });
 
     addsponsoring() {
-      
      // const product = this.sponsoringService.dataForm.value;
      // console.log(product)
       //this.sponsoringService.addTask(product).subscribe((data) => {
@@ -81,7 +80,7 @@ const product=this.sponsoringService.dataForm.value;
           'icon': 'success',
           'text': 'sponsoring added successfully !'
         })
-        this.router.navigateByUrl("/admin/sponsoringlist")
+        this.router.navigateByUrl("/user/sponsoringlist")
       }, err => {
         Swal.fire({
           'icon': 'error',

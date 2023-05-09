@@ -5,7 +5,7 @@
       <div class="card-header">
         <h4 class="card-title" style="margin-left: 40%; font-size: xx-large; color: coral">Annonce List</h4>
       </div>
-      <button type="button" routerLink="/admin/add/annonce" class="btn btn-outline-success">Add Annonce</button>
+      <button type="button" routerLink="/user/addF/annonce" class="btn btn-outline-success">Add Annonce</button>
       <div class="card-body">
         <input type="text" [(ngModel)]="location" (ngModelChange)="Search()" placeholder="Enter Location to search" class="form-control">
         <div class="table-responsive">
@@ -14,28 +14,20 @@
               <th>location</th>
               <th>Description</th>
               <th>PriceA</th>
-              <th>Verified</th>
+              <th>Picture</th>
               <th>USID</th>
-              <th>Actions</th>
+              <th>Delete</th>
             </thead>
             <tbody>
               <tr *ngFor="let list of listAnnonce | filterBy: searchText | paginate: { itemsPerPage: 10, currentPage: currentPage }">
                 <td>{{ list.location }}</td>
                 <td>{{ list.description }}</td>
                 <td>{{ list.priceA }}</td>
-                <td>
-                  <div *ngIf="list.verified == false">
-                    <i class='bi bi-circle-fill activity-badge text-success align-self-start'></i>
-                </div>
-                <div *ngIf="list.verified== true">
-                  <i class='bi bi-circle-fill activity-badge text-danger align-self-start'></i>
-                </div>
-                </td>
+                <td><img src="./assets/front/img/maison.jpg"></td>
                 <td>{{ list.usId }}</td>
                 <td>
                   <button type="button" (click)="Delete(list.id)" class="btn btn-outline-danger">Delete</button>
-
-                    <button (click)="open(mymodal)" type="button" class="btn btn-outline-danger">EDIT</button>
+                  <button (click)="open(mymodal)" type="button" class="btn btn-outline-danger">EDIT</button>
                     <ng-template #mymodal let-modal>
                         <div class="modal-header">
                             <h4 class="modal-title" id="modal-basic-title">Edit Announcement</h4>
@@ -80,9 +72,6 @@
                             </form>
                         </div>
                     </ng-template>
-                    <button type="button" (click)="verifyAnnonce(list.id)" class="btn btn-outline-danger">Verify</button>
-
-
                 </td>
               </tr>
             </tbody>
@@ -92,9 +81,6 @@
           <pagination-controls (pageChange)="currentPage = $event" class="center"></pagination-controls>
         </div>
       </div>
-    </div>
-    <div class="d-flex justify-content-center mt-3">
-    <button (click)="exportPdfDTO()" type="button"  class="center" class="btn btn-outline-success">DEVIS DTO</button>
     </div>
   </div>
 </div>

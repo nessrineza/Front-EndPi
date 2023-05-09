@@ -11,7 +11,10 @@ import { AddAnnonceComponent } from './backOffice/add-annonce/add-annonce.compon
 import { ListSponsoringsComponent } from './backOffice/list-sponsorings/list-sponsorings.component';
 import { SponsoringComponent } from './backOffice/sponsoring/sponsoring.component';
 import { AnnonceAddComponent } from './backOffice/annonce-add/annonce-add.component';
-
+import { AnnonceAddFComponent } from './frontOffice/annonce-addF/annonce-addF.component';
+import { ListAnnonceComponent } from './frontOffice/listannonce/listannonce.component';
+import { UpdateAnnonceComponent } from './frontOffice/update-annonce/update-annonce.component';
+import { SponsoringsComponent } from './frontOffice/sponsorings/sponsorings.component';
 
 const routes: Routes = [
   {
@@ -47,7 +50,8 @@ const routes: Routes = [
         path:'add/sponsoring',
         component:SponsoringComponent
       },
-      { path: 'updateAnnonce/:id', component: UpdateannonceComponent },
+      { path: 'updateAnnonce/:id',
+       component: UpdateAnnonceComponent },
 
 
     ]
@@ -60,7 +64,29 @@ const routes: Routes = [
       {
         path:'user',
         component:BodyUserComponent
-      }
+      },
+      {
+        path:'addF/annonce',
+        component:AnnonceAddFComponent
+      },
+      {
+        path:'listannonce',
+        component:ListAnnonceComponent
+      },
+      {
+        path:'updateAnnonce/:id',
+        component:UpdateAnnonceComponent
+      },
+      {
+        path:'sponsoringlist',
+        component:ListSponsoringsComponent
+      },
+      {
+        path:'add/sponsorings',
+        component:SponsoringsComponent
+      },
+
+
     ]
   }
 ];

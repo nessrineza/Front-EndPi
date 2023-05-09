@@ -42,12 +42,23 @@ export class AnnouncmentService {
     UpdateAnnouncement(formData: any): Observable<any> {
       return this.httpClient.put(`${this.baseUrl}/updateAnnonce`,formData);
     }
-   
+
     deleteProduct(id: any): Observable<HttpResponse<any>> {
       return this.httpClient.delete(`${this.baseUrl}/deleteAnnonce/${id}`,{observe : 'response'});
     }
     addAnn(formData: FormData): Observable<any> {
       return this.httpClient.post(`${this.baseUrl}/addAnnonce`, formData);
+    }
+
+    verify(id: number): Observable<any> {
+      return this.httpClient.post(`${this.baseUrl}/verifyAnnouncement/`+id,null);
+    }
+    getDtoList(): Observable<any[]> {
+      return this.httpClient.get<any[]>(this.baseUrl + '/retrieveAllDto');
+    }
+
+    exportPdfDTO(): Observable<Blob>{
+      return this.httpClient.get(`${this.baseUrl}/pdf/annonce`, {responseType: 'blob'});
     }
 
     post_options = {

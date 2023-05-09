@@ -23,6 +23,16 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { FilterPipeModule } from 'ngx-filter-pipe';
 import { AddAnnonceComponent } from './backOffice/add-annonce/add-annonce.component';
 import { AnnonceAddComponent } from './backOffice/annonce-add/annonce-add.component';
+import { AnnonceAddFComponent } from './frontOffice/annonce-addF/annonce-addF.component';
+import { ListAnnonceComponent } from './frontOffice/listannonce/listannonce.component';
+import { UpdateAnnonceComponent } from './frontOffice/update-annonce/update-annonce.component';
+import { SponsoringsComponent } from './frontOffice/sponsorings/sponsorings.component';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
+
+
+
+
 
 @NgModule({
   declarations: [
@@ -43,6 +53,13 @@ import { AnnonceAddComponent } from './backOffice/annonce-add/annonce-add.compon
     UpdateannonceComponent,
     AddAnnonceComponent,
     AnnonceAddComponent,
+    AnnonceAddFComponent,
+    ListAnnonceComponent,
+    UpdateAnnonceComponent,
+    SponsoringsComponent,
+    ListSponsoringsComponent,
+  
+
 
   ],
   imports: [
@@ -54,6 +71,13 @@ import { AnnonceAddComponent } from './backOffice/annonce-add/annonce-add.compon
     FormsModule ,
     NgxPaginationModule,
     FilterPipeModule,
+    NgbModalModule,
+
+
+
+
+
+
 
 
 

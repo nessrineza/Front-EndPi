@@ -35,6 +35,10 @@ export class AnnonceAddComponent {
   });
   console.log(this.annoceService.dataForm)
   console.log(this.annoceService.dataForm)
+  //notification
+  if (Notification.permission !== 'granted') {
+    Notification.requestPermission();
+  }
   }
 
   infoForm() {
@@ -47,7 +51,13 @@ export class AnnonceAddComponent {
     });
   }
   addAnnonce() {
-
+ // Créer une notification lorsque l'annonce est ajoutée
+ if (Notification.permission === 'granted') {
+  new Notification('Annonce Added!', {
+    body: 'Your Annonce has been successfully added!',
+    icon: 'assets/notification-icon.png'
+  });
+}
 
 
   const p=this.annoceService.dataForm.value;

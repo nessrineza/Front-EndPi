@@ -4,9 +4,9 @@ import { SponsoringService } from 'src/app/services/sponsoring.service';
 import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
-  selector: 'app-list-sponsorings',
-  templateUrl: './list-sponsorings.component.html',
-  styleUrls: ['./list-sponsorings.component.css']
+  selector: 'app-list-sponsoring',
+  templateUrl: './list-sponsoring.component.html',
+  styleUrls: ['./list-sponsoring.component.css']
 })
 export class ListSponsoringsComponent {
   listSponsoring : Array<Sponsoring>=[];
@@ -14,8 +14,7 @@ export class ListSponsoringsComponent {
   closeResult! : string;
   form : boolean = false;
   p:number=1;
-  type:any;
-  constructor(private sponsoringService:SponsoringService, private modalService: NgbModal) { }
+  constructor(private sponsoringService:SponsoringService,private modalService: NgbModal) { }
 
   ngOnInit(): void {
     return this.getAllCategories();
@@ -37,7 +36,7 @@ export class ListSponsoringsComponent {
       );
   }
 
-  editSponsoring(sponsoring: Sponsoring){
+  editAnnonce(sponsoring: Sponsoring){
     this.sponsoringService.updateSponsoring(sponsoring).subscribe();
   }
 
@@ -64,17 +63,6 @@ export class ListSponsoringsComponent {
     }
     cancel(){
       this.form = false;
-    }
-
-    Search(){
-      if(this.type ==""){
-        this.ngOnInit();
-      }
-      else{
-        this.listSponsoring=this.listSponsoring.filter(res =>{
-           return res.type.toLocaleLowerCase().match(this.type.toLocaleLowerCase());
-        });
-      }
     }
 }
 

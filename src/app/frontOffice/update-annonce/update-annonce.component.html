@@ -3,11 +3,11 @@
     <div class="col-md-12">
       <div class="card card-user">
         <div class="card-header">
-          <h5 class="card-title">Add Annonce</h5>
+          <h5 class="card-title">Update Annonce</h5>
         </div>
         <div class="card-body">
           <form
-            [formGroup]="annonceForm"
+            [formGroup]="annoceService.dataForm"
             (ngSubmit)="addAnnonce()"
           >
             <div class="row">
@@ -20,6 +20,7 @@
                     placeholder="Name"
                     formControlName="location"
                     id="location"
+                    value="{{annonce.location}}"
                   />
                 </div>
               </div>
@@ -34,6 +35,8 @@
                     placeholder="description"
                     formControlName="description"
                     id="description"
+                    value="{{annonce.description}}"
+
                   />
                 </div>
               </div>
@@ -49,6 +52,7 @@
                     placeholder="priceA "
                     formControlName="priceA"
                     id="priceA"
+                    value="{{annonce.priceA}}"
                   />
                 </div>
               </div>
@@ -61,20 +65,27 @@
                     placeholder="usId"
                     formControlName="usId"
                     id="usId"
+                    value="{{annonce.usId}}"
                   />
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12 pr-1">
+                  <div class="form-group">
+                    <input type="hidden" formControlName="id">
+                  </div>
+                </div>
+            </div>
+
+              <div class="row">
+                <div class="update ml-auto mr-auto">
+                  <button type="submit" class="btn btn-primary btn-round">
+                    update Annonce
+                  </button>
                 </div>
               </div>
             </div>
 
-
-
-            <div class="row">
-              <div class="update ml-auto mr-auto">
-                <button type="submit" class="btn btn-primary btn-round">
-                  Add annonce
-                </button>
-              </div>
-            </div>
           </form>
         </div>
       </div>

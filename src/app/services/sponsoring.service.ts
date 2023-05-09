@@ -38,7 +38,7 @@ export class SponsoringService {
       return this.httpClient.post(this.baseUrl + '/addSponsoring', formData);
     }
 
-    updateSponsoring(formData: FormData): Observable<any> {
+    updateSponsoring(formData: any): Observable<any> {
       return this.httpClient.put(this.baseUrl + '/updateSponsoring', formData);
     }
     deleteSponsoring(sponsoring: Sponsoring): Observable<Sponsoring> {

@@ -1,17 +1,16 @@
+import { Component } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
+import Swal from 'sweetalert2';
 import { AnnouncmentService } from 'src/app/services/announcment.service';
 import { Announcement } from './../../Models/announcement';
-import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import Swal from 'sweetalert2';
-import { FormBuilder, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'app-updateannonce',
-  templateUrl: './updateannonce.component.html',
-  styleUrls: ['./updateannonce.component.css']
+  selector: 'app-update-annonce',
+  templateUrl: './update-annonce.component.html',
+  styleUrls: ['./update-annonce.component.css']
 })
-export class UpdateannonceComponent {
-
+export class UpdateAnnonceComponent {
   onSelectFile: boolean = false
   errorMessage: string = '';
   file!: string;
@@ -70,3 +69,4 @@ export class UpdateannonceComponent {
       })
   }
 }
+

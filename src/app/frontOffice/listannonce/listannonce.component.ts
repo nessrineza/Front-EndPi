@@ -7,9 +7,9 @@ import { trigger, transition, style, animate } from '@angular/animations';
 import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
-  selector: 'app-list-annonces',
-  templateUrl: './list-annonces.component.html',
-  styleUrls: ['./list-annonces.component.css'],
+  selector: 'app-listannonce',
+  templateUrl: './listannonce.component.html',
+  styleUrls: ['./listannonce.component.css'],
   animations: [
     trigger('fadeInOut', [
       transition(':enter', [
@@ -22,9 +22,8 @@ import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
     ]),
   ],
 })
-export class ListAnnoncesComponent {
+export class ListAnnonceComponent {
   listAnnonce: Array<Announcement> = [];
-  listDto: Array<any> = [];
   announcement= new Announcement();
   selectedCategory = null;
   closeResult! : string;
@@ -55,17 +54,14 @@ export class ListAnnoncesComponent {
     ;
   }
 
-  Delete(id: any)
-   {
+  Delete(id: any) {
     this.annonceService.deleteProduct(id).subscribe(
       () => (this.listAnnonce = this.listAnnonce.filter((t) => t.id !== id)),
       (data: any) => {
         console.log(data);
         console.log(id);
-
       }
     );
-
   }
   currentPage = 1;
   searchText: string = '';
@@ -73,33 +69,6 @@ export class ListAnnoncesComponent {
   editAnnonce(annonce: Announcement){
     this.annonceService.UpdateAnnouncement(annonce).subscribe();
   }
-
-  verifyAnnonce(id: number){
-    this.annonceService.verify(id).subscribe();
-    window.location.reload();
-  }
-
-  getAllDto(): void {
-    this.annonceService.getDtoList().subscribe((data: any[]) => {
-      this.listDto = data;
-    });
-  }
-
-  exportPdfDTO(){
-    this.annonceService.exportPdfDTO().subscribe(x=>{
-      const blob = new Blob([x], {type :'application/pdf'});
-      const data = window.URL.createObjectURL(blob);
-      const link = document.createElement('a');
-      link.href = data;
-      link.download ='Devis DTO.pdf';
-      link.dispatchEvent(new MouseEvent('click', {bubbles: true, cancelable: true, view: window}));
-      setTimeout(function() {
-        window.URL.revokeObjectURL(data);
-        link.remove();
-      }, 100);
-    });
-  }
-
 
   open(content: any) {
     this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {

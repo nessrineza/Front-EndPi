@@ -3,14 +3,16 @@
     <div class="col-md-12">
       <div class="card card-user">
         <div class="card-header" style="background-color: #4da8b0;">
-          <h5 class="card-title text-white">Add Sponsoring</h5>
+          <h5 class="card-title text-white">Add Announcement</h5>
         </div>
         <div class="card-body">
           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-          <form [formGroup]="this.sponsoringService.dataForm" (ngSubmit)="addsponsoring()" class="animate__animated animate__fadeInUp">
+          <form [formGroup]="annoceService.dataForm"  (ngSubmit)="addAnnonce()" class="animate__animated animate__fadeInUp">
+            <img [src]="url" height="200"><br>
+        <input type="file" (change)="onselectFile($event)">
             <div class="form-group">
-              <label for="type" style="color: #FF7F50;">Type</label>
-              <input type="text" class="form-control" formControlName="type" id="type" placeholder="Name">
+              <label for="location" style="color: #FF7F50;">Location</label>
+              <input type="text" class="form-control" formControlName="location" id="location" placeholder="Name">
             </div>
             <div class="form-group">
               <label for="description" style="color: #FF7F50;">Description</label>
@@ -18,16 +20,16 @@
             </div>
             <div class="form-row">
               <div class="form-group col-md-6">
-                <label for="priceS" style="color: #FF7F50;">Price</label>
-                <input type="number" class="form-control" formControlName="priceS" id="priceS" placeholder="Price">
+                <label for="priceA" style="color: #FF7F50;">Price</label>
+                <input type="number" class="form-control" formControlName="priceA" id="priceA" placeholder="Price">
               </div>
               <div class="form-group col-md-6">
-                <label for="quantite" style="color: #FF7F50;">Quantite</label>
-                <input type="number" class="form-control" formControlName="quantite" id="quantite" placeholder="User ID">
+                <label for="usId" style="color: #FF7F50;">User ID</label>
+                <input type="number" class="form-control" formControlName="usId" id="usId" placeholder="User ID">
               </div>
             </div>
             <div class="form-group">
-              <button type="submit" class="btn btn-success btn-round float-right animate__animated animate__pulse animate__infinite" style="background-color: #7dc26b;">Add Sponsoring</button>
+              <button type="submit" class="btn btn-success btn-round float-right animate__animated animate__pulse animate__infinite" style="background-color: #7dc26b;"  routerLink="/user/annoncelist">Add Announcement</button>
             </div>
           </form>
         </div>
@@ -35,10 +37,3 @@
     </div>
   </div>
 </div>
-<div class="row">
-  <div class="col-md-12">
-    <div class="card card-user">
-      <div class="card-header" style="background-color: #4da8b0;">
-
-</div>
-

@@ -5,20 +5,15 @@
         <div class="card-header">
           <h4
             class="card-title"
-            style="margin-left: 40%; font-size: xx-large; color: coral"
-          >
+            style="margin-left: 40%; font-size: xx-large; color: coral" >
             Sponsoring List
           </h4>
         </div>
 
-        <button
-          type="button"
-          routerLink="/admin/sponsoring"
-          class="btn btn-outline-success"
-        >
-          Add Sponsoring
-        </button>
+        <button type="button" routerLink="/user/add/sponsorings" class="btn btn-outline-success">Add Sponsoring</button>
         <div class="card-body">
+          <input type="text" [(ngModel)]="type" (ngModelChange)="Search()" placeholder="Enter Location to search" class="form-control">
+          <br>
           <div class="table-responsive">
             <table class="table">
               <thead class="text-primary">
@@ -52,6 +47,55 @@
                     >
                       Delete
                     </button>
+                    <button (click)="open(mymodal)" type="button" class="btn btn-outline-danger">EDIT</button>
+                    <ng-template #mymodal let-modal>
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="modal-basic-title">Edit Sponsoringt</h4>
+                            <button type="button" class="close" aria-label="Close"
+                                (click)="modal.dismiss('Cross click')">
+                                <span aria-hidden="true" (click)="cancel()">×</span>
+
+                            </button>
+
+                        </div>
+                        <div>
+                            <form>
+                                <div class="modal-body">
+
+                                    <div class="row" class="col-md-5">
+                                        <label>Type</label>
+                                        <input type="text" [(ngModel)]="list.type"
+                                            [ngModelOptions]="{standalone : true}" />
+                                    </div>
+                                    <div class="row" class="col-md-5">
+                                        <label>Description</label>
+                                        <input type="text" [(ngModel)]="list.description"
+                                            [ngModelOptions]="{standalone : true}" />
+                                    </div>
+                                    <div class="row" class="col-md-5">
+                                        <label>Price</label>
+                                        <input type="number" [(ngModel)]="list.priceS"
+                                            [ngModelOptions]="{standalone : true}" />
+                                    </div>
+                                    <div class="row" class="col-md-5">
+                                      <label>Quantity</label>
+                                      <input type="number" [(ngModel)]="list.quantite"
+                                          [ngModelOptions]="{standalone : true}" />
+                                  </div>
+
+                                </div>
+
+                                <div class="modal-footer">
+
+                                    <button type="button" class="btn btn-info"
+                                        (click)="modal.close('Save click')"
+                                        (click)="cancel()">Cancel</button>
+                                    <button class="btn btn-success" (click)="editSponsoring(list)"
+                                        (click)="modal.close('Save click')">Validate</button>
+                                </div>
+                            </form>
+                        </div>
+                    </ng-template>
                   </td>
                 </tr>
               </tbody>
