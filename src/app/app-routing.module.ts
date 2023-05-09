@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AllTemplateAdminComponent } from './backOffice/all-template-admin/all-template-admin.component';
 import { BodyAdminComponent } from './backOffice/body-admin/body-admin.component';
@@ -16,12 +16,31 @@ import { ListAnnonceComponent } from './frontOffice/listannonce/listannonce.comp
 import { UpdateAnnonceComponent } from './frontOffice/update-annonce/update-annonce.component';
 import { SponsoringsComponent } from './frontOffice/sponsorings/sponsorings.component';
 
+import { ListClaimComponent } from './list-claim/list-claim.component';
+import { AddClaimComponent } from './add-claim/add-claim.component';
+import { AddStockComponent } from './add-stock/add-stock.component';
+import { StockListComponent } from './stock-list/stock-list.component';
+import { StockUpdateComponent } from './backOffice/stock-update/stock-update.component';
+
+
+import { AppointementComponent } from './frontOffice/appointement/appointement.component';
+import { DetailAppointementComponent } from './frontOffice/detail-appointement/detail-appointement.component';
+import { PayementComponent } from './frontOffice/payement/payement.component';
+import { DisplayPayementComponent } from './frontOffice/display-payement/display-payement.component';
+import { DetailAppoComponent } from './frontOffice/detail-appo/detail-appo.component';
+import { StripePayementComponent } from './frontOffice/stripe-payement/stripe-payement.component';
+import { FullCalanderComponent } from './frontOffice/full-calander/full-calander.component';
+import { ReminderComponent } from './frontOffice/reminder/reminder.component';
+import { PayementFComponent} from './backOffice/payementF/payementF.component';
+import { appointementBComponent } from './backOffice/appointementB/appointement.component';
+
 const routes: Routes = [
   {
     path:'admin',
     component:AllTemplateAdminComponent,
     children:[
       {
+
         path:'',
         component:BodyAdminComponent
       },
@@ -54,14 +73,42 @@ const routes: Routes = [
        component: UpdateAnnonceComponent },
 
 
+
+        path:'admin', component:BodyAdminComponent
+      },
+      {
+        path: 'Claims', component:ListClaimComponent
+      },
+      {
+        path: 'Stocks', component:StockListComponent
+      },
+      {
+        path: 'addstock', component:AddStockComponent
+      },
+      {
+        path: 'updatestock', component:StockUpdateComponent
+      }
+
+        path:'admin',
+        component:BodyAdminComponent
+      },
+      {
+        path: 'payement', component: PayementFComponent
+
+      }, {
+        path: 'appointement', component: appointementBComponent
+
+      },   
+
+
     ]
   },
 
   {
-    path:'user',
-    component:AllTemplateUserComponent,
+    path:'user', component:AllTemplateUserComponent,
     children:[
       {
+
         path:'user',
         component:BodyUserComponent
       },
@@ -85,6 +132,56 @@ const routes: Routes = [
         path:'add/sponsorings',
         component:SponsoringsComponent
       },
+
+
+
+        path:'user', component:BodyUserComponent
+      },
+      {
+        path: 'frontclaim', component:AddClaimComponent
+      }
+
+        path:'user',
+        component:BodyUserComponent,
+        
+      },
+      {
+        path: 'appointments',component:AppointementComponent
+      },
+     
+      {
+        path: 'payement', component: PayementComponent
+
+      },
+      {
+        path: 'Displaypayement', component: DisplayPayementComponent
+
+      },    
+       {
+        path: 'DetailAppointementComponent', component: AllTemplateUserComponent ,children:[
+          {path:'' , component:DetailAppointementComponent},
+          {path:'detailappo/:id', component:DetailAppoComponent}
+        ]
+
+      },
+      
+      {
+        path:'detailappo/:id', component:DetailAppoComponent
+
+      },   
+      {
+        path:'stripe', component:StripePayementComponent
+
+      },  
+        {
+        path:'CalanderofAppointement', component:FullCalanderComponent
+
+      },   
+      {
+        path:'Reminder', component:ReminderComponent
+
+      },   
+      
 
 
     ]

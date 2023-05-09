@@ -1,0 +1,32 @@
+<div class="content">
+<div class="row">
+  <div class="col-md-16">
+    <div class="card">
+      <div class="card-header">
+        <h4 class="card-title" style="margin-left: 40%; font-size: xx-large; color: coral">Payement List</h4>
+      </div>
+     
+      <div class="card-body">
+        
+        <div class="table-responsive">
+          <table class="table">
+            <thead class="text-primary">
+          
+              <th>Amount</th>
+              <th>Type</th>
+             
+            </thead>
+            <tbody>
+              <tr *ngFor="let payement of payements ">
+                <td>{{ payement.rising}}</td>
+                <td>{{ payement.type}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+</div>
