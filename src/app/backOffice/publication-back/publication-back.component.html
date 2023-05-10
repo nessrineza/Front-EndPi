@@ -35,8 +35,8 @@
                         <tbody>
                             <tr *ngFor='let p of listPublications'>
                                 <td >
-                                  <a [routerLink]="['/com', p.id]" > {{p.subject}}</a></td>
-                                <td><a [routerLink]="['/com', p.id]" >{{p.description}}</a></td>
+                                  <a [routerLink]="['/comadmin', p.id]" > {{p.subject}}</a></td>
+                                <td><a [routerLink]="['/comadmin', p.id]" >{{p.description}}</a></td>
 
                                 <td>{{p.favoris}}</td>
                                 <td>{{p.report}}</td>

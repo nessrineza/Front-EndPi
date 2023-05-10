@@ -5,7 +5,8 @@ import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ToolbarService, LinkService, ImageService, HtmlEditorService, QuickToolbarService, TableService } from '@syncfusion/ej2-angular-richtexteditor';
 import { DomSanitizer } from '@angular/platform-browser';
 
-
+import * as Grammarly from "@grammarly/editor-sdk";
+import { init } from '@grammarly/editor-sdk';
 
 
 @Component({
@@ -33,6 +34,24 @@ text:any;
   constructor(private publicationService : PublicationService,private modalService: NgbModal,private sanitizer: DomSanitizer) { }
 
   ngOnInit(): void {
+/**   (async () => {
+      const config: Grammarly.EditorConfig = {
+        activation: 'immediate',
+      };
+      const Grammarly = await init('client_2ugLBpxpwuDNSzRNvxWzB1', config);
+      const textArea = document.querySelector('textarea');
+      textArea && Grammarly.addPlugin(textArea);
+
+      const input = document.querySelector('#test-input') as HTMLElement;
+      input && Grammarly.addPlugin(input);
+
+      const contentEditableDiv = document.querySelector(
+        '[contenteditable]'
+      ) as HTMLElement;
+      contentEditableDiv && Grammarly.addPlugin(contentEditableDiv);
+    })();**/
+    Grammarly.init("client_2ugLBpxpwuDNSzRNvxWzB1");
+
     this.getAllPublications();
 
     this.publication = {
@@ -71,12 +90,19 @@ favoris:0
   {this.publicationService.likePublication(idpublication,publication).subscribe();}
   reportPublication(idpublication:any,publication:any)
   {this.publicationService.reportPublication(idpublication,publication).subscribe();}
+
+
+
+
+
+
   open(content: any) {
   this.modalService.open(content, {centered: true,size: 'xl',scrollable: true }).result.then((result: any) => {
     this.closeResult = `Closed with: ${result}`;
   }, (reason: any) => {
     this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
   });
+
   }
   private getDismissReason(reason: any): string {
     if (reason === ModalDismissReasons.ESC) {

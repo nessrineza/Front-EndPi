@@ -6,6 +6,8 @@ import { Publication } from '../shared/model/publication';
 import { PublicationService } from '../shared/service/publication-service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Location } from '@angular/common';
+import { Observable, map } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 
 @Component({
@@ -13,6 +15,8 @@ import { Location } from '@angular/common';
   templateUrl: './comment.component.html',
   styleUrls: ['./comment.component.css']
 })
+
+
 export class CommentComponent {
 
 
@@ -25,7 +29,9 @@ export class CommentComponent {
    url:any;
 
   constructor(private commentService : CommentService,private modalService: NgbModal,
-    private route:ActivatedRoute,private publicationService:PublicationService,private location: Location,private router:Router) { }
+    private route:ActivatedRoute,private publicationService:PublicationService,private location: Location,private router:Router,private http: HttpClient) { }
+
+
 
   ngOnInit(): void {
 this.idPub=this.route.snapshot.paramMap.get('idPub');
@@ -47,6 +53,29 @@ pseudo:null
     }
 
   }
+
+
+
+
+  checkSimilarity(text: string, apiKey: string): Observable<number> {
+    const body = {
+      document: {
+        text: text
+      }
+    };
+
+    const headers = {
+      'Content-Type': 'application/json',
+      'Api-Key': apiKey
+    };
+
+    return this.http.post<any>(`https://api.ithenticate.com/v1/documents/check_similarity`, body, { headers }).pipe(
+      map(response => response.similarity_score)
+    );
+  }
+
+
+
 
 
 
@@ -83,8 +112,12 @@ pseudo:null
   reloadComponent() {
     this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
       this.router.navigate([CommentComponent]);
-    });
-  }
+    });}
+
+
+
+
+
   open(content: any) {
   this.modalService.open(content, {centered: true,size: 'xl',scrollable: true }).result.then((result: any) => {
     this.closeResult = `Closed with: ${result}`;

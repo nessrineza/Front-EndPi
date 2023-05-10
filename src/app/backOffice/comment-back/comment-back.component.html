@@ -13,10 +13,111 @@
 
  <!-- Template Main CSS File -->
  <link href="/assets/back/css/style.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@grammarly/editor-sdk?clientId=client_2ugLBpxpwuDNSzRNvxWzB1"></script>
 
  <app-header-admin></app-header-admin>
+ <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
+
+ <section style="background-color: #eee;" style="margin-top: 70px;margin-left: 290px;">
+   <div class="container ">
+     <div class="row d-flex justify-content-center">
+       <div class="col-md-12 col-lg-12 col-xl-12"> <!-- verfier taille template-->
+         <div class="card">
+           <div class="card-body">
+             <div class="d-flex flex-start align-items-center">
+               <img class="rounded-circle shadow-1-strong me-3"
+                 src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(19).webp" alt="avatar" width="60"
+                 height="60" />
+               <div>
+                 <h6 class="fw-bold text-primary mb-1">Leila_Trabelsi</h6>
+                 <p class="text-muted small mb-0">
+                   Shared publicly - {{publication.date}}
+                 </p>
+               </div>
+             </div>
+ <div>
+             <p class="mt-3 mb-4 pb-2" >
+ {{publication.description}}            </p>
+ <div class="container-fluid py-3" style="background-color: #ffffff;">
+
+
+   </div>
+
+
+
+
+             <div class="small d-flex justify-content-start">
+               <a class="bi bi-emoji-heart-eyes text-danger m-3"> {{publication.favoris}}
+               </a>
+               <a class="bi bi-emoji-angry text-warning m-3">{{publication.report}}</a>
+              <!-- <MDBIcon icon="camera" animate='bounce' />-->
+
+               
+
+             </div>
+           </div>
+
+           <div class="card-footer py-3 border-0" style="background-color: #f8f9fa;">
+ <div  *ngFor="let item of listComments">
+
+             <div class="d-flex flex-start w-80">
+               <img class="rounded-circle shadow-1-strong me-3"
+                 src="https://p.kindpng.com/picc/s/24-248253_user-profile-default-image-png-clipart-png-download.png" alt="avatar" width="40"
+                 height="40"  />
+
+               <div class="form-outline w-100"><a class="text-info m-3">@{{item.pseudo}}</a>
+
+
+                 <textarea class="form-control" id="textAreaExample" rows="3" cols="80"
+                   disabled style="background: #e4e2e2;">{{ item.content }}</textarea>
+               </div>
+             </div>
+
+
+
+
+             <div class="small d-flex justify-content-start"  style="margin-left: 50px;margin-bottom: 30px ;" >
+               <a class="bi bi-emoji-heart-eyes text-danger m-3">{{item.likes}}</a>
+               <a class="bi bi-emoji-laughing text-warning m-3">{{item.unlikes}}</a>
+
+               <a class="bi bi-emoji-angry text-warning m-3">{{item.report}}</a>
+
+
+               <a  onclick="location.reload();" class="d-flex align-items-center me-3">
+                 <i class="fas fa-share me-2"></i>
+                 <pre (click)="deleteComment(item.id)" onclick="Location.reload()" class="mb-0">|  Delete </pre><i class="bi bi-recycle"></i>
+
+
+               </a>
+             </div>
+           </div>
+             <div class="d-flex flex-start w-100">
+               <img class="rounded-circle shadow-1-strong me-3"
+ src="https://scontent.ftun10-1.fna.fbcdn.net/v/t39.30808-6/306321232_2229039213917927_837900650589069180_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=ApMqFHXC_4QAX85jZF8&_nc_ht=scontent.ftun10-1.fna&oh=00_AfDHMn4GyYpHy6cWGX-0RNytd6m6Swoi7wGI9WfAORkPiw&oe=645F5C5F"                 alt="avatar" width="40"
+                 height="40" />
+                 <form><div class="form-outline w-100" >
+                 <textarea id="sec1" class="form-control"  rows="3" cols="110"
+                   style="background: #faf5f5;" [(ngModel)]="comment.content"
+                   [ngModelOptions]="{standalone : true}"></textarea>
+
+               </div>
+
+             <div class="float-end mt-2 pt-1">
+               <button type="button" class="btn btn-primary btn-sm" (click)="addComment(comment)">Post comment</button>
+               <button type="button" class="btn btn-outline-primary btn-sm">Cancel</button>
+             </div></form>
+           </div>
+         </div>
+       </div>
+     </div>
+   </div></div>
+ <div style="width: 500px; height: 100px; background-color: #eee;"></div>
+<!--  <grammarly-editor-plugin>
+  <textarea></textarea>
+</grammarly-editor-plugin> -->
  <app-side-admin></app-side-admin>
 <app-footer-admin></app-footer-admin>
+<script src="https://cdn.jsdelivr.net/npm/@grammarly/editor-sdk?clientId=client_2ugLBpxpwuDNSzRNvxWzB1"></script>
 
  <!-- Vendor JS Files -->
  <script src="/assets/back/vendor/apexcharts/apexcharts.min.js"></script>

@@ -93,11 +93,28 @@
                               <input type="text" class="form-control" required placeholder="Publication title" [(ngModel)]="publication.subject"
                                   [ngModelOptions]="{standalone : true}">
                           </div>
-                         <div class="row" class="input-group mb-3">
+                         <div class="row" class="input-group mb-3" >
+                          <input type="text" class="form-control" [(ngModel)]="publication.description"
+                          [ngModelOptions]="{standalone : true}" style="height:150px;"
+                          >
                              <!--begin-->
-                            <ejs-richtexteditor [enableHtmlSanitizer]="true" [toolbarSettings]="tools" placeholder="Contenu" [(ngModel)]="publication.description"
+                            <!-- <ejs-richtexteditor [enableHtmlSanitizer]="true" [toolbarSettings]="tools" placeholder="Contenu" ><ng-template #valueTempalte ><p>Wooow</p></ng-template>
+                            </ejs-richtexteditor> -->
+
+
+
+                           <!--  <grammarly-editor-plugin>
+                              <textarea></textarea>
+                            </grammarly-editor-plugin>  -->
+
+
+                            <!--<tx-document-editor
+                            width="1000px"
+                            height="500px"
+                            webSocketURL="wss://backend.textcontrol.com?access-token=AZbOxNs1yxLAjjJ5GCFa"
+                            [(ngModel)]="publication.description"
                             [ngModelOptions]="{standalone : true}"><ng-template #valueTempalte ><p>Wooow</p></ng-template>
-                            </ejs-richtexteditor>
+                            </tx-document-editor><!-->
                           </div>
 <!--end-->
                           <br>

@@ -2,9 +2,15 @@ import { Component, OnInit } from '@angular/core';
 import { Comment } from 'src/app/shared/model/comment';
 import { CommentService } from 'src/app/shared/service/comment.service';
 import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Publication } from 'src/app/shared/model/publication';
 import { PublicationService } from 'src/app/shared/service/publication-service';
+import * as Grammarly from "@grammarly/editor-sdk";
+import { init } from '@grammarly/editor-sdk';
+import { HttpClient } from '@angular/common/http';
+import {Location} from '@angular/common';
+
+
 @Component({
   selector: 'app-comment-back',
   templateUrl: './comment-back.component.html',
@@ -19,10 +25,15 @@ export class CommentBackComponent {
    publication!:Publication;
    closeResult! : string;
    idPub:any;
+  url: any;
 
-  constructor(private commentService : CommentService,private modalService: NgbModal,private route:ActivatedRoute,private publicationService:PublicationService) { }
+  constructor(private commentService : CommentService,private modalService: NgbModal,private route:ActivatedRoute,
+    private publicationService:PublicationService,private location:Location,private router:Router,private http: HttpClient) { }
 
   ngOnInit(): void {
+
+       Grammarly.init("client_2ugLBpxpwuDNSzRNvxWzB1");
+
 this.idPub=this.route.snapshot.paramMap.get('idPub');
 this.getOnePublication();
 this.getAllComments();
@@ -58,18 +69,37 @@ pseudo:null
 
   editComment(Comment : Comment){
     this.commentService.editComment(Comment).subscribe();
+
   }
+
+
   likeComment(idComment:any,comment:any){this.commentService.likeComment(idComment,comment).subscribe();}
+
+
   reportComment(idComment:any,comment:any){this.commentService.reportComment(idComment,comment).subscribe();}
 
   deleteComment(idComment : any){
     this.commentService.deleteComment(idComment).subscribe(() => this.getAllComments());
     this.ngOnInit();
 
-  } likePublication(idpublication:any,publication:any)
+  }
+
+
+
+  likePublication(idpublication:any,publication:any)
   {this.publicationService.likePublication(idpublication,publication).subscribe();}
+
   reportPublication(idpublication:any,publication:any)
   {this.publicationService.reportPublication(idpublication,publication).subscribe();}
+
+
+
+
+
+
+
+
+
   open(content: any) {
   this.modalService.open(content, {centered: true,size: 'xl',scrollable: true }).result.then((result: any) => {
     this.closeResult = `Closed with: ${result}`;

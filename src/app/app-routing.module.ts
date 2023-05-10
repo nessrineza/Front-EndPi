@@ -32,7 +32,7 @@ const routes: Routes = [
   },
   { path: 'pub',
   component:PublicationComponent,
-  }, { path: 'comadmin',
+  }, { path: 'comadmin/:idPub',
   component:CommentBackComponent,
   },{ path: 'pubadmin',
   component:PublicationBackComponent,
