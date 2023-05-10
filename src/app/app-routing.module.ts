@@ -158,14 +158,7 @@ const routes: Routes = [
         path: 'Displaypayement', component: DisplayPayementComponent
 
       },    
-       {
-        path: 'DetailAppointementComponent', component: AllTemplateUserComponent ,children:[
-          {path:'' , component:DetailAppointementComponent},
-          {path:'detailappo/:id', component:DetailAppoComponent}
-        ]
-
-      },
-      
+       
       {
         path:'detailappo/:id', component:DetailAppoComponent
 
@@ -182,11 +175,16 @@ const routes: Routes = [
         path:'Reminder', component:ReminderComponent
 
       },   
-      
-
-
     ]
-  }
+  },
+  {
+    path: 'user/DetailAppointementComponent', component: AllTemplateUserComponent 
+    ,children:[
+      {path:'' , component:DetailAppointementComponent},
+      {path:'detailappo/:id', component:DetailAppoComponent}
+    ]
+   
+  },
 ];
 
 @NgModule({
