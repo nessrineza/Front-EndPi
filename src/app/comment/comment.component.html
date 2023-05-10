@@ -105,7 +105,7 @@
                 <i class="far fa-thumbs-up me-2"></i>
                 <p class="mb-0">Like</p>
               </a>
-              <a href="#sec1" class="d-flex align-items-center me-3">
+              <a onclick=" window.location.hash='sec1';" class="d-flex align-items-center me-3">
                 <i class="far fa-comment-dots me-2"></i>
                 <p class="mb-0">Comment</p>
               </a>
@@ -143,7 +143,7 @@
 
               <a class="bi bi-emoji-angry text-warning m-3">{{item.report}}</a>
 
-              <a  (click)="likeComment(item.id,item);reloadComponent()"
+              <a  (click)="likeComment(item.id,item);" onclick="location.reload();" id="like"
               class="d-flex align-items-center me-3">
 
                 <i class="far fa-thumbs-up me-2"></i>
@@ -153,22 +153,17 @@
 
 
 
-              <a (click)="hahaComment(item.id,item)" onclick="location.reload();" class="d-flex align-items-center me-3">
+              <a (click)="hahaComment(item.id,item)" onclick="location.reload();" class="d-flex align-items-center me-3" id="haha">
                 <i class="fas fa-share me-2"></i>
                 <pre class="mb-0">| Haha </pre><i class="bi bi-emoji-laughing"></i>
 
               </a>
-              <a (click)="reportComment(item.id,item)" onclick="location.reload();" class="d-flex align-items-center me-3">
+              <a (click)="reportComment(item.id,item)" onclick="location.reload();" class="d-flex align-items-center me-3" id="angry">
                 <i class="fas fa-share me-2"></i>
                 <pre class="mb-0">|  Angry </pre><i class="bi bi-emoji-angry"></i>
 
               </a>
-              <a  onclick="location.reload();" class="d-flex align-items-center me-3">
-                <i class="fas fa-share me-2"></i>
-                <pre (click)="deleteComment(item.id)" class="mb-0">|  Delete </pre><i class="bi bi-recycle"></i>
 
-
-              </a>
             </div>
           </div>
             <div class="d-flex flex-start w-100">
@@ -221,3 +216,65 @@ src="https://scontent.ftun10-1.fna.fbcdn.net/v/t39.30808-6/306321232_22290392139
 
     <!-- Template Main JS File -->
     <script src="/assets/front/js/main.js"></script>
+  <!--   <script>
+
+      $(function () {
+
+          var clicked = false;
+
+          var first = $('#like');
+
+          var second = $('#haha');
+          var third = $('#angry');
+
+
+
+          first.on('click', function () {
+
+              clicked = !clicked;
+
+              if (clicked)
+
+                {  second.attr('disabled', 'disabled');
+                  third.attr('disabled', 'disabled');
+                }
+              else
+
+                  second.removeAttr('disabled');
+                  third.removeAttr('disabled');
+
+
+          });
+
+
+
+          second.on('click', function () {
+
+              clicked = !clicked;
+
+              if (clicked)
+
+                 { first.attr('disabled', 'disabled');
+                  third.attr('disabled', 'disabled');
+                }
+              else
+
+                  first.removeAttr('disabled');
+                  third.removeAttr('disabled');
+
+
+          });third.on('click', function () {clicked = !clicked;
+
+  if (clicked)
+
+     { first.attr('disabled', 'disabled');
+     second.attr('disabled', 'disabled');
+    }
+  else
+
+      first.removeAttr('disabled');
+      second.removeAttr('disabled');});
+
+      });
+
+  </script> -->

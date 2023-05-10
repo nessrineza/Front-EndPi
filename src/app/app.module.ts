@@ -25,11 +25,12 @@ import { ShareButtons, ShareButtonsModule } from 'ngx-sharebuttons/buttons';
 import { ShareIconsModule } from 'ngx-sharebuttons/icons';
 import { ShareButton, ShareButtonModule } from 'ngx-sharebuttons/button';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
-import * as Grammarly from "@grammarly/editor-sdk";
+import {GrammarlyEditorPluginElement} from "@grammarly/editor-sdk";
 import { DocumentEditorModule } from '@txtextcontrol/tx-ng-document-editor';
 import { init } from '@grammarly/editor-sdk';
 
 import { NgxEditorModule } from 'ngx-editor';
+
 
 
 
@@ -44,12 +45,13 @@ import { NgxEditorModule } from 'ngx-editor';
     AllTemplateUserComponent,
     BodyUserComponent,
     FooterUserComponent,
-    HeaderUserComponent,PublicationComponent, CommentComponent, CommentBackComponent, PublicationBackComponent
+    HeaderUserComponent,PublicationComponent, CommentComponent, CommentBackComponent, PublicationBackComponent,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,FormsModule,HttpClientModule,RichTextEditorModule,  BrowserAnimationsModule
-,ShareIconsModule,ShareButtonsModule,FontAwesomeModule, DocumentEditorModule,NgxEditorModule
+,ShareIconsModule,ShareButtonsModule,FontAwesomeModule, DocumentEditorModule,NgxEditorModule,
 
   ],
   providers: [],

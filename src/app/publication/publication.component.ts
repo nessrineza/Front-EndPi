@@ -7,6 +7,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 
 import * as Grammarly from "@grammarly/editor-sdk";
 import { init } from '@grammarly/editor-sdk';
+import { NavigationEnd, Router } from '@angular/router';
 
 
 @Component({
@@ -31,9 +32,23 @@ export class PublicationComponent implements OnInit {
    publication!: Publication;
    closeResult! : string;
 text:any;
-  constructor(private publicationService : PublicationService,private modalService: NgbModal,private sanitizer: DomSanitizer) { }
+mySubscription: any;
+
+  constructor(private publicationService : PublicationService,private modalService: NgbModal,private sanitizer: DomSanitizer,private router:Router) { }
 
   ngOnInit(): void {
+
+    this.router.routeReuseStrategy.shouldReuseRoute = function () {
+    return false;
+    };
+    this.mySubscription = this.router.events.subscribe((event) => {
+    if (event instanceof NavigationEnd) {
+    // Trick the Router into believing it's last link wasn't previously loaded
+    this.router.navigated = false;
+    }
+    });
+
+
 /**   (async () => {
       const config: Grammarly.EditorConfig = {
         activation: 'immediate',
@@ -64,6 +79,9 @@ report:0,
 favoris:0
     }
   }
+  ngOnDestroy(){if (this.mySubscription) {
+    this.mySubscription.unsubscribe();
+    }}
 
   getAllPublications(){
     this.publicationService.getAllPublications().subscribe(res => this.listPublications = res)
