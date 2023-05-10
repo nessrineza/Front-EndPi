@@ -114,16 +114,16 @@
                             </div>
                            <div class="row" class="input-group mb-3">
                                <!--begin-->
-                              <ejs-richtexteditor [enableHtmlSanitizer]="true" [toolbarSettings]="tools" placeholder="Contenu" [(ngModel)]="publication.description"
-                              [ngModelOptions]="{standalone : true}"><ng-template #valueTempalte ><p>Wooow</p></ng-template>
-                              </ejs-richtexteditor>
+                               <ejs-richtexteditor [enableHtmlSanitizer]="true" [toolbarSettings]="tools" placeholder="Contenu" ><ng-template #valueTempalte ><p>Wooow</p></ng-template>
+                               </ejs-richtexteditor>
+
                             </div>
   <!--end-->
                             <br>
                             <div class="d-flex justify-content-center">
 
                             <button type="button" class="badge rounded-pill bg-success" style="padding: 0.7rem 1rem; font-size: 1.1rem;"
-                            (click)="addPublication(publication)" onclick="location.reload();" (click)="modal1.close('Save click')">Add</button>
+                           (click)="addPublication(publication)" onclick="location.reload();" (click)="modal1.close('Save click')">Add</button>
                             <button type="button" class="badge rounded-pill bg-secondary" style="padding: 0.7rem 1rem; font-size: 1.1rem;" (click)="modal1.close('Save click')" >Cancel</button>
                             </div>
                             <br>

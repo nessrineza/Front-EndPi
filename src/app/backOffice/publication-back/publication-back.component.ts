@@ -4,6 +4,7 @@ import { PublicationService } from 'src/app/shared/service/publication-service';
 import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ToolbarService, LinkService, ImageService, HtmlEditorService, QuickToolbarService, TableService } from '@syncfusion/ej2-angular-richtexteditor';
 import { DomSanitizer } from '@angular/platform-browser';
+import { Editor, toDoc } from 'ngx-editor';
 @Component({
   selector: 'app-publication-back',
   templateUrl: './publication-back.component.html',
@@ -24,9 +25,14 @@ export class PublicationBackComponent {
    publication!: Publication;
    closeResult! : string;
 text:any;
+editor!: Editor;
+
   constructor(private publicationService : PublicationService,private modalService: NgbModal,private sanitizer: DomSanitizer) { }
 
+
+
   ngOnInit(): void {
+    this.editor = new Editor();
     this.getAllPublications();
 
     this.publication = {
@@ -39,7 +45,9 @@ report:0,
 favoris:0
     }
   }
-
+toJson(x:any){
+x=toDoc(x);
+}
   getAllPublications(){
     this.publicationService.getAllPublications().subscribe(res => this.listPublications = res)
   }
@@ -88,7 +96,7 @@ favoris:0
     this.form = false;
   }
 
-   removeHtmlTagsWithStyle(html: string): string {
+   removeHtmlTagsWithStyle(html: string) {
     // Create a new DOMParser object
     const parser = new DOMParser();
 
@@ -105,7 +113,7 @@ favoris:0
       plainText = `<style>${styles}</style>${plainText}`;
     }
 
-    return plainText;
+     html=plainText;
   }
 
 

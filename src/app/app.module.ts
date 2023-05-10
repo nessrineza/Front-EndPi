@@ -29,6 +29,9 @@ import * as Grammarly from "@grammarly/editor-sdk";
 import { DocumentEditorModule } from '@txtextcontrol/tx-ng-document-editor';
 import { init } from '@grammarly/editor-sdk';
 
+import { NgxEditorModule } from 'ngx-editor';
+
+
 
 @NgModule({
   declarations: [
@@ -46,7 +49,7 @@ import { init } from '@grammarly/editor-sdk';
   imports: [
     BrowserModule,
     AppRoutingModule,FormsModule,HttpClientModule,RichTextEditorModule,  BrowserAnimationsModule
-,ShareIconsModule,ShareButtonsModule,FontAwesomeModule, DocumentEditorModule
+,ShareIconsModule,ShareButtonsModule,FontAwesomeModule, DocumentEditorModule,NgxEditorModule
 
   ],
   providers: [],
