@@ -1,25 +1,25 @@
 import { Component } from '@angular/core';
-import { trigger, state, style, transition, animate } from '@angular/animations';
+import { ToolbarService, LinkService, ImageService, HtmlEditorService, QuickToolbarService, TableService } from '@syncfusion/ej2-angular-richtexteditor';
+
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   template: '<router-outlet></router-outlet>',
   styleUrls: ['./app.component.css'],
-  animations: [
-    trigger('fadeInOut', [
-      state('void', style({ opacity: 0 })),
-      transition('void <=> *', [
-        animate(1000)
-      ])
-    ])
-  ]
+  providers: [ToolbarService, LinkService, ImageService, HtmlEditorService, QuickToolbarService, TableService]
+
 })
 export class AppComponent {
   title = 'welcamp';
-  isButtonClicked = false;
+  public tools: Object = {
+    items: ['Bold', 'Italic', 'Underline', 'StrikeThrough',
+        'FontName', 'FontSize', 'FontColor', 'BackgroundColor',
+        'LowerCase', 'UpperCase', '|',
+        'Formats', 'Alignments', 'OrderedList', 'UnorderedList',
+        'Outdent', 'Indent', '|',
+        'CreateLink', 'Image', '|', 'ClearFormat', 'Print',
+        'SourceCode', 'FullScreen', '|', 'Undo', 'Redo']
+};
 
-  onButtonClick() {
-    this.isButtonClicked = true;
-  }
 }
