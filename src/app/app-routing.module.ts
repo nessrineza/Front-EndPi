@@ -72,7 +72,7 @@ const routes: Routes = [
       { path: 'updateAnnonce/:id',
        component: UpdateAnnonceComponent },
 
-
+     {
 
         path:'admin', component:BodyAdminComponent
       },
@@ -87,15 +87,16 @@ const routes: Routes = [
       },
       {
         path: 'updatestock', component:StockUpdateComponent
-      }
-
+      },
+     {
         path:'admin',
         component:BodyAdminComponent
       },
       {
         path: 'payement', component: PayementFComponent
 
-      }, {
+      },
+       {
         path: 'appointement', component: appointementBComponent
 
       },   
@@ -104,7 +105,7 @@ const routes: Routes = [
     ]
   },
 
-  {
+     {
     path:'user', component:AllTemplateUserComponent,
     children:[
       {
@@ -134,14 +135,14 @@ const routes: Routes = [
       },
 
 
-
+    {
         path:'user', component:BodyUserComponent
       },
       {
         path: 'frontclaim', component:AddClaimComponent
-      }
+      },
 
-        path:'user',
+       { path:'user',
         component:BodyUserComponent,
         
       },

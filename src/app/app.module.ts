@@ -13,7 +13,7 @@ import { BodyUserComponent } from './frontOffice/body-user/body-user.component';
 import { FooterUserComponent } from './frontOffice/footer-user/footer-user.component';
 import { HeaderUserComponent } from './frontOffice/header-user/header-user.component';
 import { HttpClientModule,  } from '@angular/common/http';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 import { AnnouncementComponent } from './backOffice/announcement/announcement.component';
 import { ListAnnoncesComponent } from './backOffice/list-annonces/list-annonces.component';
 import { SponsoringComponent } from './backOffice/sponsoring/sponsoring.component';
@@ -27,15 +27,12 @@ import { AnnonceAddFComponent } from './frontOffice/annonce-addF/annonce-addF.co
 import { ListAnnonceComponent } from './frontOffice/listannonce/listannonce.component';
 import { UpdateAnnonceComponent } from './frontOffice/update-annonce/update-annonce.component';
 import { SponsoringsComponent } from './frontOffice/sponsorings/sponsorings.component';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+
 import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 
 
-
-
-
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+
 import { ListClaimComponent } from './list-claim/list-claim.component';
 import { AddClaimComponent } from './add-claim/add-claim.component';
 import { CommonModule } from '@angular/common';
@@ -44,9 +41,8 @@ import { StockListComponent } from './stock-list/stock-list.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { StockUpdateComponent } from './backOffice/stock-update/stock-update.component';
 
-import {HttpClientModule} from "@angular/common/http";
 import { AppointementComponent } from './frontOffice/appointement/appointement.component';
-import { FormsModule } from '@angular/forms';
+
 import { DetailAppointementComponent } from './frontOffice/detail-appointement/detail-appointement.component';
 import { PayementComponent } from './frontOffice/payement/payement.component';
 import { DisplayPayementComponent } from './frontOffice/display-payement/display-payement.component';
@@ -89,46 +85,6 @@ import{ appointementBComponent} from './backOffice/appointementB/appointement.co
     UpdateAnnonceComponent,
     SponsoringsComponent,
     ListSponsoringsComponent,
-  
-
-
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    ReactiveFormsModule,
-
-    FormsModule ,
-    NgxPaginationModule,
-    FilterPipeModule,
-    NgbModalModule,
-
-
-
-
-
-
-
-
-
-
-    ListClaimComponent,
-    AddClaimComponent,
-    AddStockComponent,
-
-    StockListComponent,
-      StockUpdateComponent
-  ],
-  imports: [
-    BrowserModule,
-   BrowserAnimationsModule,
-    AppRoutingModule,
-    FormsModule,
-    HttpClientModule,
-    ReactiveFormsModule,
-    CommonModule
-
     AppointementComponent,
     DetailAppointementComponent,
     PayementComponent,
@@ -140,20 +96,49 @@ import{ appointementBComponent} from './backOffice/appointementB/appointement.co
     ReminderComponent,
     PayementFComponent,
     appointementBComponent,
-   
+     ListClaimComponent,
+    AddClaimComponent,
+    AddStockComponent,
+
+    StockListComponent,
+    StockUpdateComponent,
+    AppointementComponent,
+    DetailAppointementComponent,
+    PayementComponent,
+    DisplayPayementComponent,
+    DetailAppoComponent,
+    StripePayementComponent,
+    FullCalanderComponent,
+    DialogComponentComponent,
+    ReminderComponent,
+    PayementFComponent,
+    appointementBComponent,
+     ListClaimComponent,
+    AddClaimComponent,
+    AddStockComponent,
+
+    StockListComponent,
+    StockUpdateComponent
+  
+
+
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule, 
+    AppRoutingModule,
     HttpClientModule,
-    FormsModule,
+    ReactiveFormsModule,
+    FormsModule ,
+    NgxPaginationModule,
+    FilterPipeModule,
+    NgbModalModule,
     FullCalendarModule,
-   
-    
-   
-
+    BrowserAnimationsModule,
+     CommonModule
 
   ],
+  
+  
   providers: [],
   bootstrap: [AppComponent]
 })
