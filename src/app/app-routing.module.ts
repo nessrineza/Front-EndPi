@@ -33,7 +33,10 @@ import { FullCalanderComponent } from './frontOffice/full-calander/full-calander
 import { ReminderComponent } from './frontOffice/reminder/reminder.component';
 import { PayementFComponent} from './backOffice/payementF/payementF.component';
 import { appointementBComponent } from './backOffice/appointementB/appointement.component';
-
+import { PublicationComponent } from './frontOffice/publication/publication.component';
+import { CommentComponent } from './frontOffice/comment/comment.component';
+import { CommentBackComponent } from './backOffice/comment-back/comment-back.component';
+import { PublicationBackComponent } from './backOffice/publication-back/publication-back.component';
 const routes: Routes = [
   {
     path:'admin',
@@ -98,7 +101,7 @@ const routes: Routes = [
       }, {
         path: 'appointement', component: appointementBComponent
 
-      },   
+      },
 
 
     ]
@@ -143,12 +146,12 @@ const routes: Routes = [
 
         path:'user',
         component:BodyUserComponent,
-        
+
       },
       {
         path: 'appointments',component:AppointementComponent
       },
-     
+
       {
         path: 'payement', component: PayementComponent
 
@@ -156,7 +159,7 @@ const routes: Routes = [
       {
         path: 'Displaypayement', component: DisplayPayementComponent
 
-      },    
+      },
        {
         path: 'DetailAppointementComponent', component: AllTemplateUserComponent ,children:[
           {path:'' , component:DetailAppointementComponent},
@@ -164,24 +167,35 @@ const routes: Routes = [
         ]
 
       },
-      
+
       {
         path:'detailappo/:id', component:DetailAppoComponent
 
-      },   
+      },
       {
         path:'stripe', component:StripePayementComponent
 
-      },  
+      },
         {
         path:'CalanderofAppointement', component:FullCalanderComponent
 
-      },   
+      },
       {
         path:'Reminder', component:ReminderComponent
 
-      },   
-      
+      },
+
+      { path: 'pub',
+      component:PublicationComponent,
+      }, { path: 'comadmin/:idPub',
+      component:CommentBackComponent,
+      },{ path: 'pubadmin',
+      component:PublicationBackComponent,
+      },
+      { path: 'com/:idPub',
+      component:CommentComponent,
+      },
+
 
 
     ]

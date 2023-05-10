@@ -12,8 +12,11 @@ import { AllTemplateUserComponent } from './frontOffice/all-template-user/all-te
 import { BodyUserComponent } from './frontOffice/body-user/body-user.component';
 import { FooterUserComponent } from './frontOffice/footer-user/footer-user.component';
 import { HeaderUserComponent } from './frontOffice/header-user/header-user.component';
+import {  RichTextEditorModule } from '@syncfusion/ej2-angular-richtexteditor';
+import { PublicationComponent } from './frontOffice/publication/publication.component';
+import { CommentComponent } from './frontOffice/comment/comment.component';
+
 import { HttpClientModule,  } from '@angular/common/http';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AnnouncementComponent } from './backOffice/announcement/announcement.component';
 import { ListAnnoncesComponent } from './backOffice/list-annonces/list-annonces.component';
 import { SponsoringComponent } from './backOffice/sponsoring/sponsoring.component';
@@ -43,7 +46,17 @@ import { AddStockComponent } from './add-stock/add-stock.component';
 import { StockListComponent } from './stock-list/stock-list.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { StockUpdateComponent } from './backOffice/stock-update/stock-update.component';
+import { CommentBackComponent } from './backOffice/comment-back/comment-back.component';
+import { PublicationBackComponent } from './backOffice/publication-back/publication-back.component';
+import { PublicationComponent } from './frontOffice/publication/publication.component';
 
+import { ShareButtons, ShareButtonsModule } from 'ngx-sharebuttons/buttons';
+import { ShareIconsModule } from 'ngx-sharebuttons/icons';
+import { ShareButton, ShareButtonModule } from 'ngx-sharebuttons/button';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
+import {GrammarlyEditorPluginElement} from "@grammarly/editor-sdk";
+import { DocumentEditorModule } from '@txtextcontrol/tx-ng-document-editor';
+import { init } from '@grammarly/editor-sdk';
 import {HttpClientModule} from "@angular/common/http";
 import { AppointementComponent } from './frontOffice/appointement/appointement.component';
 import { FormsModule } from '@angular/forms';
@@ -60,6 +73,7 @@ import { ReminderComponent } from './frontOffice/reminder/reminder.component';
 import { PayementFComponent } from './backOffice/payementF/payementF.component';
 import{ appointementBComponent} from './backOffice/appointementB/appointement.component';
 
+import { NgxEditorModule } from 'ngx-editor';
 
 
 
@@ -89,7 +103,9 @@ import{ appointementBComponent} from './backOffice/appointementB/appointement.co
     UpdateAnnonceComponent,
     SponsoringsComponent,
     ListSponsoringsComponent,
-  
+    PublicationComponent, CommentComponent,
+    CommentBackComponent, PublicationBackComponent,
+
 
 
   ],
@@ -140,17 +156,20 @@ import{ appointementBComponent} from './backOffice/appointementB/appointement.co
     ReminderComponent,
     PayementFComponent,
     appointementBComponent,
-   
+
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule, 
+    AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    FullCalendarModule,
-   
-    
-   
+    FullCalendarModule,RichTextEditorModule,
+    BrowserAnimationsModule
+,ShareIconsModule,ShareButtonsModule,FontAwesomeModule,
+DocumentEditorModule,NgxEditorModule,
+
+
+
 
 
   ],
